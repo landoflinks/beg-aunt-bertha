@@ -10,6 +10,16 @@ namespace beg_aunt_bertha
     {
         static void Main(string[] args)
         {
+            char answer;
+
+            answer = Convert.ToChar(Console.Read());
+
+            while (answer != 'Q')
+            {
+                answer = Convert.ToChar(Console.Read());
+            }
+
+            Console.WriteLine("Thanks for playing!");
         }
     }
 }

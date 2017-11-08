@@ -12,7 +12,7 @@ namespace beg_aunt_bertha
         {
             string answer;
 
-            answer = Convert.ToString(Console.Read());
+            answer = Convert.ToString(Console.Read()).ToUpper();
 
             while (answer != "Q")
             {

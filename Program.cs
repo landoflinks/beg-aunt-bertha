@@ -10,13 +10,13 @@ namespace beg_aunt_bertha
     {
         static void Main(string[] args)
         {
-            char answer;
+            string answer;
 
-            answer = Convert.ToChar(Console.Read());
+            answer = Convert.ToString(Console.Read());
 
-            while (answer != 'Q')
+            while (answer != "Q")
             {
-                answer = Convert.ToChar(Console.Read());
+                answer = Convert.ToString(Console.Read());
             }
 
             Console.WriteLine("Thanks for playing!");

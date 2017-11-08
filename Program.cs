@@ -20,12 +20,12 @@ namespace beg_aunt_bertha
             Console.WriteLine("Q - Quit the game.");
 
             Console.Write("Enter in a value to proceed: ");
-            answer = Convert.ToString(Console.Read()).ToUpper();
+            answer = Convert.ToString(Console.ReadLine()).ToUpper();
 
             while (answer != "Q")
             {
-                Console.Write("What will you do next? Enter in a command: ");
-                answer = Convert.ToString(Console.Read()).ToUpper();
+                Console.Write("Enter in a command: ");
+                answer = Convert.ToString(Console.ReadLine()).ToUpper();
             }
 
             Console.WriteLine("Thanks for playing!");

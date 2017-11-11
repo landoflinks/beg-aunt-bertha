@@ -27,7 +27,24 @@ namespace beg_aunt_bertha
                 switch (answer)
                 {
                     case "O":
-
+                        // Game objective
+                        Console.WriteLine("It's the first day of summer vacation. You're looking forward " +
+                            "to an uninterrupted day full of video game fun! But then, disaster strikes. " +
+                            "Your mom gets called into work. Guess who has volunteered to babysit you? " + 
+                            "Your worst nightmare, your least favorite relative...your great-aunt Bertha!");
+                        Console.WriteLine("");
+                        Console.WriteLine("Aunt Bertha is one of THOSE old ladies. You know the type...." +
+                            "She thinks that video games rot your brain, contribute to all sorts of " +
+                            "problems in society, and in general shouldn't exist.");
+                        Console.WriteLine("");
+                        Console.WriteLine("She's also quite boring. Aunt Bertha is quite content to sit " +
+                            "in the living room most of the day watching daytime soap operas or poring " +
+                            "through stale old romance novels. She never does anything interesting!");
+                        Console.WriteLine("");
+                        Console.WriteLine("Your mission, should you choose to accept it, is to salvage " +
+                            "what precious game time you can during your afternoon. Through " +
+                            "stealth or rebellion, you will play games! And, if neither of those work, " +
+                            "you will have to beg Aunt Bertha!");
                     break;
                     case "S":
 

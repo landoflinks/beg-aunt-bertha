@@ -45,6 +45,7 @@ namespace beg_aunt_bertha
                             "what precious game time you can during your afternoon. Through " +
                             "stealth or rebellion, you will play games! And, if neither of those work, " +
                             "you will have to beg Aunt Bertha!");
+                        Console.ReadKey();
                     break;
                     case "S":
 
@@ -59,6 +60,7 @@ namespace beg_aunt_bertha
             }
 
             Console.WriteLine("Thanks for playing!");
+            Console.ReadKey();
         }
     }
 }

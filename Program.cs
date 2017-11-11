@@ -64,7 +64,7 @@ namespace beg_aunt_bertha
             Console.ReadKey();
         }
 
-        public static void HelpText()
+        protected static void HelpText()
         {
             // This method displays helpful commands.
             Console.WriteLine("Type P to start the game.");

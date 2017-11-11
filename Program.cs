@@ -13,11 +13,7 @@ namespace beg_aunt_bertha
             string answer;
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
-            Console.WriteLine("Type P to start the game.");
-            Console.WriteLine("The following values can be keyed in at any time to do the following:");
-            Console.WriteLine("O - Read the objective for the game.");
-            Console.WriteLine("S - Check the current stats in the game.");
-            Console.WriteLine("Q - Quit the game.");
+            HelpText();
 
             Console.Write("Enter in a value to proceed: ");
             answer = Convert.ToString(Console.ReadLine()).ToUpper();
@@ -30,7 +26,7 @@ namespace beg_aunt_bertha
                         // Game objective
                         Console.WriteLine("It's the first day of summer vacation. You're looking forward " +
                             "to an uninterrupted day full of video game fun! But then, disaster strikes. " +
-                            "Your mom gets called into work. Guess who has volunteered to babysit you? " + 
+                            "Your mom gets called into work. Guess who has volunteered to babysit you? " +
                             "Your worst nightmare, your least favorite relative...your great-aunt Bertha!");
                         Console.WriteLine("");
                         Console.WriteLine("Aunt Bertha is one of THOSE old ladies. You know the type...." +
@@ -47,13 +43,17 @@ namespace beg_aunt_bertha
                             "you will have to beg Aunt Bertha!");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
-                    break;
+                        break;
+                    case "H":
+                        // Calls the HelpText method to display helpful commands.
+                        HelpText();
+                        break;
                     case "S":
                         // Game stats display here.
-                    break;
+                        break;
                     case "P":
                         // Main game loop here
-                    break;
+                        break;
 
                 }
                 Console.Write("Enter in a command: ");
@@ -62,6 +62,17 @@ namespace beg_aunt_bertha
 
             Console.WriteLine("Thanks for playing!");
             Console.ReadKey();
+        }
+
+        public static void HelpText()
+        {
+            // This method displays helpful commands.
+            Console.WriteLine("Type P to start the game.");
+            Console.WriteLine("The following values can be keyed in at any time to do the following:");
+            Console.WriteLine("O - Read the objective for the game.");
+            Console.WriteLine("S - Check the current stats in the game.");
+            Console.WriteLine("H - Display helpful commands.");
+            Console.WriteLine("Q - Quit the game.");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace beg_aunt_bertha
             Console.WriteLine("Type P to start the game.");
             Console.WriteLine("The following values can be keyed in at any time to do the following:");
             Console.WriteLine("O - Read the objective for the game.");
-            Console.WriteLine("S - Check the player's status.");
+            Console.WriteLine("S - Check the current stats in the game.");
             Console.WriteLine("Q - Quit the game.");
 
             Console.Write("Enter in a value to proceed: ");
@@ -45,10 +45,11 @@ namespace beg_aunt_bertha
                             "what precious game time you can during your afternoon. Through " +
                             "stealth or rebellion, you will play games! And, if neither of those work, " +
                             "you will have to beg Aunt Bertha!");
+                        Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                     break;
                     case "S":
-
+                        // Game stats display here.
                     break;
                     case "P":
                         // Main game loop here

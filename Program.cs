@@ -24,6 +24,19 @@ namespace beg_aunt_bertha
 
             while (answer != "Q")
             {
+                switch (answer)
+                {
+                    case "O":
+
+                    break;
+                    case "S":
+
+                    break;
+                    case "P":
+                        // Main game loop here
+                    break;
+
+                }
                 Console.Write("Enter in a command: ");
                 answer = Convert.ToString(Console.ReadLine()).ToUpper();
             }

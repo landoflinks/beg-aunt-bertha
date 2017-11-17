@@ -13,8 +13,8 @@ namespace beg_aunt_bertha
         // Variables
         TimeSpan currentTime; // Tracks current time in game.
         int badSeed; // Controls Aunt Bertha's difficulty.
-        int boredom; // Tracks the player's boredom level. 
-        int anger; // Aunt Bertha's tolerance of the player's antics.
+        int boredom; // Tracks the player's boredom level. 10 = insanity by boredom/game over.
+        int anger; // Aunt Bertha's tolerance of the player's antics. 10 = early bedtime/game over.
         string berthaStatus; // Aunt Bertha's current status. 
         string weather; // Set at the beginning and (for now) changes halfway through the game.
 

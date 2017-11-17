@@ -23,9 +23,16 @@ namespace beg_aunt_bertha
             currentTime = new TimeSpan(13, 00, 00);
             badSeed = 1;
             boredom = 1;
-            anger = 10;
+            anger = 1;
             berthaStatus = "Watching TV";
             weather = "Sunny";
         }
+
+        public TimeSpan CurrentTime { get; set; }
+        public int BadSeed { get; set; }
+        public int Boredom { get; set; }
+        public int Anger { get; set; }
+        public string BerthaStatus { get; set; }
+        public string Weather { get; set; }
     }
 }

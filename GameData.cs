@@ -11,7 +11,7 @@ namespace beg_aunt_bertha
     class GameData
     {
         // Variables
-        TimeSpan currentTime = new TimeSpan(); // Tracks current time in game.
+        TimeSpan currentTime; // Tracks current time in game.
         int badSeed; // Controls Aunt Bertha's difficulty.
         int boredom; // Tracks the player's boredom level. 
         int anger; // Aunt Bertha's tolerance of the player's antics.
@@ -20,7 +20,12 @@ namespace beg_aunt_bertha
 
         public GameData() // Sets defaults when game starts.
         {
-
+            currentTime = new TimeSpan(13, 00, 00);
+            badSeed = 1;
+            boredom = 1;
+            anger = 10;
+            berthaStatus = "Watching TV";
+            weather = "Sunny";
         }
     }
 }

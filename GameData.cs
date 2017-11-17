@@ -17,5 +17,10 @@ namespace beg_aunt_bertha
         int anger; // Aunt Bertha's tolerance of the player's antics.
         string berthaStatus; // Aunt Bertha's current status. 
         string weather; // Set at the beginning and (for now) changes halfway through the game.
+
+        public GameData() // Sets defaults when game starts.
+        {
+
+        }
     }
 }

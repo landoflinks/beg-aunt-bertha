@@ -11,6 +11,7 @@ namespace beg_aunt_bertha
         static void Main(string[] args)
         {
             string answer;
+            GameData stats = new GameData();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
             HelpText();

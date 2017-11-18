@@ -34,5 +34,35 @@ namespace beg_aunt_bertha
         public int Anger { get; set; }
         public string BerthaStatus { get; set; }
         public string Weather { get; set; }
+
+        //////// Class methods ////////
+
+        /* This method randomly determines the weather in the game. For now, it is only
+           set at the beginning and changed halfway through. It is summer, so the following
+           weather effects apply: 1 - Sunny; 2 - Cloudy; 3 - Light Rain; 4 - Thunderstorm. */
+        public string SetWeather()
+        {
+            string weather = "";
+            int randomNum;
+            Random rand = new Random();
+            randomNum = rand.Next(1,4);
+
+            switch (randomNum)
+            {
+                case 1:
+                    weather = "Sunny";
+                    break;
+                case 2:
+                    weather = "Cloudy";
+                    break;
+                case 3:
+                    weather = "Light Rain";
+                    break;
+                case 4:
+                    weather = "Thunderstorm";
+                    break;
+            }
+            return weather;
+        }
     }
 }

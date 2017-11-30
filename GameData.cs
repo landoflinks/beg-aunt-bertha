@@ -66,10 +66,22 @@ namespace beg_aunt_bertha
         }
 
         /* This method sets Bertha's difficulty by polling the player about
-           their favorite games. */
+           their favorite games. An average is calculated between 1 and 4, with
+           4 being the highest difficulty. */
         public int SetDifficulty()
         {
             int difficulty = 1, value1, value2, value3;
+
+            Console.WriteLine("Choose your three favorite game genres from the following list:");
+            Console.WriteLine("1. Action/Adventure\n2. FPS/TPS\n3. Platformer\n4. Puzzle/Match 3" +
+                                "\n5. MMORPG\n6. Fighting\n7. Racing\n8. Sports\n9. RPG" +
+                                "\n10. RTS\n11. Simulation\n12. Edutainment");
+            Console.Write("Enter the first number:");
+            value1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter the second number:");
+            value2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter the third number:");
+            value3 = Convert.ToInt32(Console.ReadLine());
 
             return difficulty;
         }

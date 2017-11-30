@@ -64,5 +64,14 @@ namespace beg_aunt_bertha
             }
             return weather;
         }
+
+        /* This method sets Bertha's difficulty by polling the player about
+           their favorite games. */
+        public int SetDifficulty()
+        {
+            int difficulty = 1, value1, value2, value3;
+
+            return difficulty;
+        }
     }
 }

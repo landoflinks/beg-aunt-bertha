@@ -70,18 +70,43 @@ namespace beg_aunt_bertha
            4 being the highest difficulty. */
         public int SetDifficulty()
         {
-            int difficulty = 1, value1, value2, value3;
+            int difficulty = 0;
+                int[] value = new int[2];
 
             Console.WriteLine("Choose your three favorite game genres from the following list:");
             Console.WriteLine("1. Action/Adventure\n2. FPS/TPS\n3. Platformer\n4. Puzzle/Match 3" +
                                 "\n5. MMORPG\n6. Fighting\n7. Racing\n8. Sports\n9. RPG" +
                                 "\n10. RTS\n11. Simulation\n12. Edutainment");
             Console.Write("Enter the first number:");
-            value1 = Convert.ToInt32(Console.ReadLine());
+            value[0] = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter the second number:");
-            value2 = Convert.ToInt32(Console.ReadLine());
+            value[1] = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter the third number:");
-            value3 = Convert.ToInt32(Console.ReadLine());
+            value[2] = Convert.ToInt32(Console.ReadLine());
+
+            // Loop through, determine the value assigned to each genre, and add it to the difficulty. 
+            for (int i = 0; i < 3; i++)
+            {
+                if(value[i] == 4 || value[i] == 8 || value[i] == 12)
+                {
+                    // 4 = Puzzle/Match 3, 8 = Sports, 12 = Edutainment. Not bad at all.
+                    difficulty += 1;
+                }
+                else if(value[i] == 3 || value[i] == 7 || value[i] == 11)
+                {
+                    // 3 = Platformer, 7 = Racing, 11 = Simulation. Passable.
+                    difficulty += 2;
+                }
+                else if (value[i] == 1 || value[i] == 9 || value[i] == 10)
+                {
+                    // 1 = Action/Adventure, 9 = RPG, 10 = RTS. What are you doing with your life?
+                    difficulty += 3;
+                }
+                else
+                {
+                    // 2 = FPS/TPS, 5 = MMORPG, 6 = Fighting. You monster!
+                }
+            }
 
             return difficulty;
         }

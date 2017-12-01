@@ -114,6 +114,22 @@ namespace beg_aunt_bertha
             difficulty /= 3;
             answer = Math.Round(Convert.ToDecimal(difficulty), 0, MidpointRounding.AwayFromZero);
 
+            switch (answer)
+            {
+                case 1:
+                    Console.WriteLine("Aunt Bertha doesn't think your gaming habits are that bad.");
+                    break;
+                case 2:
+                    Console.WriteLine("Aunt Bertha sometimes nags you to get a different hobby.");
+                    break;
+                case 3:
+                    Console.WriteLine("Aunt Bertha thinks you can still be saved.");
+                    break;
+                case 4:
+                    Console.WriteLine("Aunt Bertha believes you're a delinquent beyond redemption.");
+                    break;
+            }
+
             return Convert.ToInt32(answer);
         }
     }

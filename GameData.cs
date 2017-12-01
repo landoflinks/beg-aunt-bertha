@@ -72,7 +72,7 @@ namespace beg_aunt_bertha
         {
             decimal answer;
             int difficulty = 0;
-            int[] value = new int[2];
+            int[] value = new int[3];
 
             Console.WriteLine("Choose your three favorite game genres from the following list:");
             Console.WriteLine("1. Action/Adventure\n2. FPS/TPS\n3. Platformer\n4. Puzzle/Match 3" +

@@ -55,6 +55,7 @@ namespace beg_aunt_bertha
                     case "P":
                         // Main game loop here
                         stats.Weather = stats.SetWeather(); // Temporary line for testing purposes.
+                        stats.BadSeed = stats.SetDifficulty();
                         break;
 
                 }

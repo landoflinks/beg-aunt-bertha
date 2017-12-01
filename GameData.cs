@@ -70,8 +70,9 @@ namespace beg_aunt_bertha
            4 being the highest difficulty. */
         public int SetDifficulty()
         {
+            decimal answer;
             int difficulty = 0;
-                int[] value = new int[2];
+            int[] value = new int[2];
 
             Console.WriteLine("Choose your three favorite game genres from the following list:");
             Console.WriteLine("1. Action/Adventure\n2. FPS/TPS\n3. Platformer\n4. Puzzle/Match 3" +
@@ -105,10 +106,15 @@ namespace beg_aunt_bertha
                 else
                 {
                     // 2 = FPS/TPS, 5 = MMORPG, 6 = Fighting. You monster!
+                    difficulty += 4;
                 }
             }
 
-            return difficulty;
+            // Find the difficulty average.
+            difficulty /= 3;
+            answer = Math.Round(Convert.ToDecimal(difficulty), 0, MidpointRounding.AwayFromZero);
+
+            return Convert.ToInt32(answer);
         }
     }
 }

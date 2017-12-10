@@ -51,6 +51,7 @@ namespace beg_aunt_bertha
                         break;
                     case "S":
                         // Game stats display here.
+                        stats.DisplayStats();
                         break;
                     case "P":
                         // Main game loop here

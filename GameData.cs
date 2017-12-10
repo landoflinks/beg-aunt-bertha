@@ -132,5 +132,15 @@ namespace beg_aunt_bertha
 
             return Convert.ToInt32(answer);
         }
+
+        public void DisplayStats()
+        {
+            Console.WriteLine("Current game stats:");
+            Console.WriteLine("Current Time: " + Convert.ToString(CurrentTime) + 
+                                "\nDifficulty: " + Convert.ToString(BadSeed) + 
+                                "\nBoredom: " + Convert.ToString(Boredom) +
+                                "\nBertha's Status: " + BerthaStatus +
+                                "\nCurrent Weather: " + Weather);
+        }
     }
 }

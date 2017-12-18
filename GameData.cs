@@ -58,6 +58,17 @@ namespace beg_aunt_bertha
             return weather;
         }
 
+        /* This method sets Aunt Bertha's status using random number generation.
+           It is called roughly every half hour in the main game. A better metho of doing
+           this will be devised at a later time. */
+        public string SetBerthaStatus()
+        {
+            string status = "";
+                        
+
+            return status;
+        }
+
         /* This method sets Bertha's difficulty by polling the player about
            their favorite games. An average is calculated between 1 and 4, with
            4 being the highest difficulty. */
@@ -126,6 +137,7 @@ namespace beg_aunt_bertha
             return Convert.ToInt32(answer);
         }
 
+        // Displays current game stats.
         public void DisplayStats()
         {
             Console.WriteLine("Current game stats:");

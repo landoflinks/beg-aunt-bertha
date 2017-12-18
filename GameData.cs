@@ -20,7 +20,7 @@ namespace beg_aunt_bertha
 
         public GameData() // Sets defaults when game starts.
         {
-            currentTime = new TimeSpan(13, 00, 00);
+            currentTime = new TimeSpan(13,0,0);
             badSeed = 1;
             boredom = 1;
             anger = 1;
@@ -136,11 +136,11 @@ namespace beg_aunt_bertha
         public void DisplayStats()
         {
             Console.WriteLine("Current game stats:");
-            Console.WriteLine("Current Time: " + Convert.ToString(CurrentTime) + 
-                                "\nDifficulty: " + Convert.ToString(BadSeed) + 
-                                "\nBoredom: " + Convert.ToString(Boredom) +
-                                "\nBertha's Status: " + BerthaStatus +
-                                "\nCurrent Weather: " + Weather);
+            Console.WriteLine("Current Time: " + Convert.ToString(currentTime) + 
+                                "\nDifficulty: " + Convert.ToString(badSeed) + 
+                                "\nBoredom: " + Convert.ToString(boredom) +
+                                "\nBertha's Status: " + berthaStatus +
+                                "\nCurrent Weather: " + weather);
         }
     }
 }

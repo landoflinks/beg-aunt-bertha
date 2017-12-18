@@ -129,11 +129,11 @@ namespace beg_aunt_bertha
         public void DisplayStats()
         {
             Console.WriteLine("Current game stats:");
-            Console.WriteLine("Current Time: " + Convert.ToString(currentTime) + 
-                                "\nDifficulty: " + Convert.ToString(badSeed) + 
-                                "\nBoredom: " + Convert.ToString(boredom) +
-                                "\nBertha's Status: " + berthaStatus +
-                                "\nCurrent Weather: " + weather);
+            Console.WriteLine("Current Time: " + Convert.ToString(CurrentTime) + 
+                                "\nDifficulty: " + Convert.ToString(BadSeed) + 
+                                "\nBoredom: " + Convert.ToString(Boredom) +
+                                "\nBertha's Status: " + BerthaStatus +
+                                "\nCurrent Weather: " + Weather);
         }
     }
 }

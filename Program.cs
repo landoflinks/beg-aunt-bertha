@@ -57,7 +57,7 @@ namespace beg_aunt_bertha
                         // Setting pre-game stats
                         stats.BadSeed = stats.SetDifficulty(); 
                         stats.Weather = stats.SetWeather();
-                        stats.SetBerthaStatus();
+                        stats.BerthaStatus = stats.SetBerthaStatus();
                         break;
 
                 }

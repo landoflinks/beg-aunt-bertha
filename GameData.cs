@@ -59,12 +59,46 @@ namespace beg_aunt_bertha
         }
 
         /* This method sets Aunt Bertha's status using random number generation.
-           It is called roughly every half hour in the main game. A better metho of doing
-           this will be devised at a later time. */
+           It is called roughly every half hour in the main game. Some statuses will 
+           affect Bertha's anger level. A better method of doing this may be devised later. */
         public string SetBerthaStatus()
         {
             string status = "";
-                        
+            int randomNum;
+            Random rand = new Random();
+            randomNum = rand.Next(1, 6);
+
+            switch (randomNum)
+            {
+                case 1:
+                    status = "Watching TV";
+                    break;
+                case 2:
+                    status = "Sleeping";
+                    Anger -= 2;
+                    break;
+                case 3:
+                    status = "Reading a bad romance novel";
+                    Anger -= 1;
+                    break;
+                case 4:
+                    status = "Bawling her eyes out over a predictable soap opera twist";
+                    Anger += 1;
+                    break;
+                case 5:
+                    status = "Nagging some poor cable worker over the phone";
+                    Anger += 1;
+                    break;
+                case 6:
+                    status = "Checking Facebook on mom's computer";
+                    break;
+            }
+
+            // Anger cannot be below 1. This method may cause this to happen.
+            if (Anger < 1)
+            {
+                Anger = 1;
+            }
 
             return status;
         }

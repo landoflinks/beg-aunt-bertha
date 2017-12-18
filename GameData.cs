@@ -20,7 +20,7 @@ namespace beg_aunt_bertha
 
         public GameData() // Sets defaults when game starts.
         {
-            CurrentTime = new TimeSpan(13,0,0);
+            CurrentTime = new TimeSpan(1,0,0);
             BadSeed = 1;
             Boredom = 1;
             Anger = 1;

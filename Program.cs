@@ -16,7 +16,7 @@ namespace beg_aunt_bertha
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
             HelpText();
 
-            Console.Write("Enter in a value to proceed: ");
+            Console.Write("Enter in a value: ");
             answer = Convert.ToString(Console.ReadLine()).ToUpper();
 
             while (answer != "Q")
@@ -58,6 +58,8 @@ namespace beg_aunt_bertha
                         stats.BadSeed = stats.SetDifficulty(); 
                         stats.Weather = stats.SetWeather();
                         stats.BerthaStatus = stats.SetBerthaStatus();
+
+                        // Initiate main game loop
                         break;
 
                 }

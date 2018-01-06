@@ -11,6 +11,7 @@ namespace beg_aunt_bertha
         static void Main(string[] args)
         {
             string answer;
+            bool gameSetup = true;
             GameData stats = new GameData();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
@@ -54,12 +55,17 @@ namespace beg_aunt_bertha
                         stats.DisplayStats();
                         break;
                     case "P":
-                        // Setting pre-game stats
-                        stats.BadSeed = stats.SetDifficulty(); 
-                        stats.Weather = stats.SetWeather();
-                        stats.BerthaStatus = stats.SetBerthaStatus();
+                        if (gameSetup == true)
+                        {
+                            // Setting pre-game stats
+                            gameSetup = false;
+                            stats.BadSeed = stats.SetDifficulty();
+                            stats.Weather = stats.SetWeather();
+                            stats.BerthaStatus = stats.SetBerthaStatus();
+                        }
+                        
+                        // Main game loop
 
-                        // Initiate main game loop
                         break;
 
                 }

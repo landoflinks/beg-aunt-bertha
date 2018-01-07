@@ -11,18 +11,19 @@ namespace beg_aunt_bertha
         static void Main(string[] args)
         {
             string answer;
-            bool gameSetup = true;
             GameData stats = new GameData();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
             HelpText();
+            Console.ReadKey();
 
             // Setting pre-game stats
             stats.BadSeed = stats.SetDifficulty();
             stats.Weather = stats.SetWeather();
             stats.BerthaStatus = stats.SetBerthaStatus();
 
-                Console.Write("Enter in a value: ");
+            Console.WriteLine(stats.BerthaStatus);
+            Console.Write("Enter in a value: ");
             answer = Convert.ToString(Console.ReadLine()).ToUpper();
 
             while (answer != "Q")

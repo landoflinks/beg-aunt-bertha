@@ -22,7 +22,7 @@ namespace beg_aunt_bertha
             stats.Weather = stats.SetWeather();
             stats.BerthaStatus = stats.SetBerthaStatus();
 
-            Console.WriteLine(stats.BerthaStatus);
+            Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
             Console.Write("Enter in a value: ");
             answer = Convert.ToString(Console.ReadLine()).ToUpper();
 
@@ -44,6 +44,7 @@ namespace beg_aunt_bertha
                         break;
                 }
 
+                Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
                 Console.Write("Enter in a command: ");
                 answer = Convert.ToString(Console.ReadLine()).ToUpper();
             }

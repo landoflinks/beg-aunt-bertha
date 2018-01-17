@@ -120,8 +120,20 @@ namespace beg_aunt_bertha
             value[0] = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter the second number:");
             value[1] = Convert.ToInt32(Console.ReadLine());
+            // Check to make sure this value doesn't match the previous value.
+            while (value[1] == value[0])
+            {
+                Console.Write("The value you entered matches the previous value. Please enter another:");
+                value[1] = Convert.ToInt32(Console.ReadLine());
+            }
             Console.Write("Enter the third number:");
             value[2] = Convert.ToInt32(Console.ReadLine());
+            // Check to make sure this value doesn't match the previous values.
+            while (value[2] == value[1] || value[2] == value[0])
+            {
+                Console.Write("The value you entered matches one of the previous values. Please enter another:");
+                value[2] = Convert.ToInt32(Console.ReadLine());
+            }
 
             // Loop through, determine the value assigned to each genre, and add it to the difficulty. 
             for (int i = 0; i < 3; i++)

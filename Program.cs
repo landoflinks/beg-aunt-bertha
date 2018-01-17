@@ -15,6 +15,7 @@ namespace beg_aunt_bertha
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
             HelpText();
+            Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
 
             // Setting pre-game stats

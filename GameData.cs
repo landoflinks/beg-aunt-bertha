@@ -118,6 +118,7 @@ namespace beg_aunt_bertha
                                 "\n10. RTS\n11. Simulation\n12. Edutainment");
             Console.Write("Enter the first number:");
             value[0] = Convert.ToInt32(Console.ReadLine());
+            value[0] = GameNumCheck(value[0]);
             Console.Write("Enter the second number:");
             value[1] = Convert.ToInt32(Console.ReadLine());
             // Check to make sure this value doesn't match the previous value.
@@ -126,6 +127,7 @@ namespace beg_aunt_bertha
                 Console.Write("The value you entered matches the previous value. Please enter another:");
                 value[1] = Convert.ToInt32(Console.ReadLine());
             }
+            value[1] = GameNumCheck(value[1]);
             Console.Write("Enter the third number:");
             value[2] = Convert.ToInt32(Console.ReadLine());
             // Check to make sure this value doesn't match the previous values.
@@ -134,6 +136,7 @@ namespace beg_aunt_bertha
                 Console.Write("The value you entered matches one of the previous values. Please enter another:");
                 value[2] = Convert.ToInt32(Console.ReadLine());
             }
+            value[2] = GameNumCheck(value[2]);
 
             // Loop through, determine the value assigned to each genre, and add it to the difficulty. 
             for (int i = 0; i < 3; i++)

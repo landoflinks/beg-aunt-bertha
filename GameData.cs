@@ -200,11 +200,11 @@ namespace beg_aunt_bertha
         // This simple method checks to make sure none of the game numbers entered is above twelve.
         private int GameNumCheck(int num)
         {
-            if (num > 12)
-            {
+             while (num > 12)
+             {
                 Console.Write("The number you entered is greater than 12. Please enter a number under 12:");
                 num = Convert.ToInt32(Console.ReadLine());
-            }
+             }
             return num;
         }
     }

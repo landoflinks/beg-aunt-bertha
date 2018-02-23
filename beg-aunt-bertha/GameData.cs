@@ -27,9 +27,10 @@ namespace beg_aunt_bertha
             BerthaStatus = "Watching TV";
             Weather = "Sunny";
         }
-        
+
         //////// Class methods ////////
 
+        #region SetWeather
         /* This method randomly determines the weather in the game. For now, it is only
            set at the beginning and changed halfway through. It is summer, so the following
            weather effects apply: 1 - Sunny; 2 - Cloudy; 3 - Light Rain; 4 - Thunderstorm. */
@@ -58,6 +59,9 @@ namespace beg_aunt_bertha
             return weather;
         }
 
+        #endregion
+
+        #region SetBerthaStatus
         /* This method sets Aunt Bertha's status using random number generation.
            It is called roughly every half hour in the main game. Some statuses will 
            affect Bertha's anger level. A better method of doing this may be devised later. */
@@ -103,6 +107,9 @@ namespace beg_aunt_bertha
             return status;
         }
 
+        #endregion
+
+        #region SetDifficulty
         /* This method sets Bertha's difficulty by polling the player about
            their favorite games. An average is calculated between 1 and 4, with
            4 being the highest difficulty. */
@@ -186,6 +193,9 @@ namespace beg_aunt_bertha
             return Convert.ToInt32(answer);
         }
 
+        #endregion
+
+        #region DisplayStats
         // Displays current game stats.
         public void DisplayStats()
         {
@@ -196,7 +206,9 @@ namespace beg_aunt_bertha
                                 "\nBertha's Status: " + BerthaStatus +
                                 "\nCurrent Weather: " + Weather);
         }
+        #endregion
 
+        #region GameNumCheck
         // This simple method checks to make sure none of the game numbers entered is above twelve.
         private int GameNumCheck(int num)
         {
@@ -207,5 +219,6 @@ namespace beg_aunt_bertha
              }
             return num;
         }
+        #endregion
     }
 }

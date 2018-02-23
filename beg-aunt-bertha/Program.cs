@@ -8,6 +8,8 @@ namespace beg_aunt_bertha
 {
     class Program
     {
+
+        #region Main Method
         static void Main(string[] args)
         {
             string answer;
@@ -51,7 +53,9 @@ namespace beg_aunt_bertha
             Console.WriteLine("Thanks for playing!");
             Console.ReadKey();
         }
+        #endregion
 
+        #region HelpText
         protected static void HelpText()
         {
             // This method displays helpful commands.
@@ -62,6 +66,9 @@ namespace beg_aunt_bertha
             Console.WriteLine("Q - Quit the game.");
         }
 
+        #endregion
+
+        #region Objective
         protected static void Objective()
         {
             // This explains the objective of the game.
@@ -85,5 +92,6 @@ namespace beg_aunt_bertha
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
+        #endregion
     }
 }

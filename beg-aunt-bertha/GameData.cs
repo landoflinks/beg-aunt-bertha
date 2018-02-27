@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace beg_aunt_bertha
 {
-    // This class will be subject to a lot of changes as the game evolves. 
-    // It is possible that it will be split into more than one class.
+    /* The GameData class is where the stats and their related logic
+     are stored. This class is subject to change and may even be split up. */
     class GameData
     {
         // Variables
@@ -98,7 +94,7 @@ namespace beg_aunt_bertha
                     break;
             }
 
-            // Anger cannot be below 1. This method may cause this to happen.
+            // Anger cannot be below 1. This fixes that.
             if (Anger < 1)
             {
                 Anger = 1;
@@ -209,7 +205,7 @@ namespace beg_aunt_bertha
         #endregion
 
         #region GameNumCheck
-        // This simple method checks to make sure none of the game numbers entered is above twelve.
+        // This simple method checks to make sure none of the genre numbers entered is above twelve.
         private int GameNumCheck(int num)
         {
              while (num > 12)

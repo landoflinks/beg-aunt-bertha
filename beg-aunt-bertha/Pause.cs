@@ -7,7 +7,7 @@ namespace beg_aunt_bertha
     class Pause
     {
         #region PauseMenu
-        public static void PauseMenu(GameData stats)
+        public void PauseMenu(GameData stats)
         {
             string answer;
 
@@ -42,7 +42,7 @@ namespace beg_aunt_bertha
         #endregion
 
         #region HelpText
-        public static void HelpText()
+        public void HelpText()
         {
             // This method displays helpful commands.
             Console.WriteLine("The following values can be keyed in:");
@@ -55,7 +55,7 @@ namespace beg_aunt_bertha
         #endregion
 
         #region Objective
-        public static void Objective()
+        public void Objective()
         {
             // This explains the objective of the game.
             Console.WriteLine("It's the first day of summer vacation. You're looking forward " +

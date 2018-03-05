@@ -10,7 +10,6 @@ namespace beg_aunt_bertha
         {
             string answer;
             GameData stats = new GameData();
-            Pause pauseMenu = new Pause();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
             // Create main game loop command list
@@ -21,12 +20,39 @@ namespace beg_aunt_bertha
             stats.BerthaStatus = stats.SetBerthaStatus();
 
             Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
-            
+
             // Main game loop
+            Console.Write("Enter in a value: ");
+            answer = Convert.ToString(Console.ReadLine()).ToUpper();
+
+            while (answer != "Q")
+            {
+                switch (answer)
+                {
+                    case "P":
+                        // Used to access the Pause Menu.
+                        Pause pauseMenu = new Pause();
+                        pauseMenu.HelpText();
+                        pauseMenu.PauseMenu(stats);
+                        break;
+                }
+
+                Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
+                Console.Write("Enter in a command: ");
+                answer = Convert.ToString(Console.ReadLine()).ToUpper();
+            }
 
             Console.WriteLine("Thanks for playing!");
             Console.ReadKey();
         }
         #endregion
+
+        // This method lists commands for the main game loop. It'll change a lot.
+        private static void GameCommands()
+        {
+            Console.WriteLine("The following values can be keyed in at any time:");
+            Console.WriteLine("P - Access the Pause Menu.");
+            Console.WriteLine("Q - Quit the game.");
+        }
     }
 }

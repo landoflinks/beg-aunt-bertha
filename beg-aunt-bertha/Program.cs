@@ -37,7 +37,6 @@ namespace beg_aunt_bertha
                     case "P":
                         // Used to access the Pause Menu.
                         Pause pauseMenu = new Pause();
-                        pauseMenu.HelpText();
                         pauseMenu.PauseMenu(stats);
                         break;
                 }

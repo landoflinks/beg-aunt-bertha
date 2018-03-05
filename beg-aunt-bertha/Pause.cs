@@ -34,7 +34,6 @@ namespace beg_aunt_bertha
                         break;
                 }
 
-                Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
                 Console.Write("Enter in a command: ");
                 answer = Convert.ToString(Console.ReadLine()).ToUpper();
             }
@@ -75,8 +74,6 @@ namespace beg_aunt_bertha
                 "what precious game time you can during your afternoon. Through " +
                 "stealth or rebellion, you will play games! And, if neither of those work, " +
                 "you will have to beg Aunt Bertha!");
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
         }
         #endregion
     }

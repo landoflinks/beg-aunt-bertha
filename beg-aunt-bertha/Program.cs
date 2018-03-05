@@ -18,7 +18,8 @@ namespace beg_aunt_bertha
             stats.BadSeed = stats.SetDifficulty();
             stats.Weather = stats.SetWeather();
             stats.BerthaStatus = stats.SetBerthaStatus();
-
+            GameCommands();
+            Console.WriteLine("Current Time: " + stats.CurrentTime);
             Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
 
             // Main game loop
@@ -29,6 +30,10 @@ namespace beg_aunt_bertha
             {
                 switch (answer)
                 {
+                    case "A":
+                        // Shows available commands.
+                        GameCommands();
+                        break;
                     case "P":
                         // Used to access the Pause Menu.
                         Pause pauseMenu = new Pause();
@@ -51,8 +56,9 @@ namespace beg_aunt_bertha
         private static void GameCommands()
         {
             Console.WriteLine("The following values can be keyed in at any time:");
-            Console.WriteLine("P - Access the Pause Menu.");
-            Console.WriteLine("Q - Quit the game.");
+            Console.WriteLine("A - Show available commands");
+            Console.WriteLine("P - Access the pause menu");
+            Console.WriteLine("Q - Quit the game");
         }
     }
 }

@@ -51,6 +51,7 @@ namespace beg_aunt_bertha
         }
         #endregion
 
+        #region GameCommands
         // This method lists commands for the main game loop. It'll change a lot.
         private static void GameCommands()
         {
@@ -59,5 +60,6 @@ namespace beg_aunt_bertha
             Console.WriteLine("P - Access the pause menu");
             Console.WriteLine("Q - Quit the game");
         }
+        #endregion
     }
 }

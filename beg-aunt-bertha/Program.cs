@@ -10,6 +10,7 @@ namespace beg_aunt_bertha
         {
             string answer;
             GameData stats = new GameData();
+            Actions action = new Actions();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
             // Create main game loop command list
@@ -32,7 +33,7 @@ namespace beg_aunt_bertha
                 {
                     case "A":
                         // Shows available commands.
-                        GameCommands();
+                        action.GameCommands();
                         break;
                     case "P":
                         // Used to access the Pause Menu.
@@ -48,22 +49,6 @@ namespace beg_aunt_bertha
 
             Console.WriteLine("Thanks for playing!");
             Console.ReadKey();
-        }
-        #endregion
-
-        #region GameCommands
-        // This method lists commands for the main game loop. It'll change a lot.
-        private static void GameCommands()
-        {
-            Console.WriteLine("The following values can be entered:");
-            Console.WriteLine("O - Go outside");
-            Console.WriteLine("R - Read in your room");
-            Console.WriteLine("T - Attempt to watch TV");
-            Console.WriteLine("S - Sit around bored");
-            Console.WriteLine("V - Sneak off and play video games");
-            Console.WriteLine("A - Show available commands");
-            Console.WriteLine("P - Access the pause menu");
-            Console.WriteLine("Q - Quit the game");
         }
         #endregion
     }

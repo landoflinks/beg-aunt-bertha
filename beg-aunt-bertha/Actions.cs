@@ -33,11 +33,41 @@ namespace beg_aunt_bertha
         A number generator determines the outcome. */
             public void Outside()
                 {
-                    int outsideNum;
-                    Random rand = new Random();
-                    outsideNum = rand.Next(1, 6);
-                }
-            #endregion
+                    // If the weather is rainy, skip any outside activities.
+                    if (Weather == "Thunderstorm" || Weather == "Light Rain")
+                    {
+                        Console.WriteLine("Aunt Bertha says: 'You can't go outside! It's raining!'");
+                        Boredom += 1;
+                    }
+                    else
+                    {
+                        int outsideNum;
+                        Random rand = new Random();
+                        outsideNum = rand.Next(1, 6);
+
+                        switch (outsideNum)
+                        {
+                            case 1:
+
+                                break;
+                            case 2:
+
+                                break;
+                            case 3:
+
+                                break;
+                            case 4:
+
+                                break;
+                            case 5:
+                                break;
+                            case 6:
+                                break;
+                        }
+                    }
+                    
+             }
+        #endregion
         #endregion
     }
 }

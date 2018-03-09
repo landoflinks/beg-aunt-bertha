@@ -11,6 +11,7 @@ namespace beg_aunt_bertha
             string answer;
             GameData stats = new GameData();
             Actions action = new Actions();
+            Pause pauseMenu = new Pause();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
             // Create main game loop command list
@@ -19,7 +20,7 @@ namespace beg_aunt_bertha
             stats.BadSeed = stats.SetDifficulty();
             stats.Weather = stats.SetWeather();
             stats.BerthaStatus = stats.SetBerthaStatus();
-            GameCommands();
+            action.GameCommands();
             Console.WriteLine("Current Time: " + stats.CurrentTime);
             Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
 
@@ -37,7 +38,6 @@ namespace beg_aunt_bertha
                         break;
                     case "P":
                         // Used to access the Pause Menu.
-                        Pause pauseMenu = new Pause();
                         pauseMenu.PauseMenu(stats);
                         break;
                 }

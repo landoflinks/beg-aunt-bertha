@@ -36,6 +36,10 @@ namespace beg_aunt_bertha
                         // Shows available commands.
                         action.GameCommands();
                         break;
+                    case "O":
+                        // Calls the Outside() method.
+                        action.Outside();
+                        break;
                     case "P":
                         // Used to access the Pause Menu.
                         pauseMenu.PauseMenu(stats);

@@ -49,22 +49,27 @@ namespace beg_aunt_bertha
                             case 1:
                                 Console.WriteLine("You find a stick and draw pictures in the dirt. Boring!");
                                 Boredom += 1;
+                                CurrentTime = CurrentTime.Add(fifteen);
                                 break;
                             case 2:
                                 Console.WriteLine("You play catch with the neighbor's dog. It's kinda fun minus the slobber.");
                                 Boredom -= 1;
+                                CurrentTime = CurrentTime.Add(thirty);
                                 break;
                             case 3:
                                 Console.WriteLine("You stare at patterns in the clouds.");
                                 Boredom -= 1;
-                                break;
+                                CurrentTime = CurrentTime.Add(fifteen);
+                        break;
                             case 4:
                                 Console.WriteLine("You get together with some of the neighborhood kids and play a sport you like in a park across the street.");
                                 Boredom -= 2;
-                                break;
+                                CurrentTime = CurrentTime.Add(oneHour);
+                        break;
                             case 5:
                                 Console.WriteLine("You play a sport with some of the neighborhood kids across the street, but you secretly hate it.");
                                 Boredom += 2;
+                                CurrentTime = CurrentTime.Add(oneHour);
                                 break;
                             case 6:
                                 Console.WriteLine("You grab your skateboard for some sidewalk surfing action, but Aunt Bertha confiscates it.");
@@ -84,6 +89,7 @@ namespace beg_aunt_bertha
                             case 9:
                                 Console.WriteLine("You sneak over to a neighbor kid's house and play video games for as long as you dare.");
                                 Boredom -= 3;
+                                CurrentTime = CurrentTime.Add(oneHour);
                                 break;
                 }
                     }

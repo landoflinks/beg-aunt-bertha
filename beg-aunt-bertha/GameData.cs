@@ -95,10 +95,7 @@ namespace beg_aunt_bertha
             }
 
             // Anger cannot be below 1. This fixes that.
-            if (Anger < 1)
-            {
-                Anger = 1;
-            }
+            CheckAnger(Anger);
 
             return status;
         }
@@ -214,6 +211,25 @@ namespace beg_aunt_bertha
                 num = Convert.ToInt32(Console.ReadLine());
              }
             return num;
+        }
+        #endregion
+
+        #region CheckAnger
+        // Checks Aunt Bertha's anger. Anger can't be less than 1. Anger = 10 is a game over!
+        public int CheckAnger(int rage)
+        {
+            if (rage < 1)
+            {
+                rage = 1;
+            }
+
+            if (rage <= 10)
+            {
+                rage = 10;
+                // Call GameOver function.
+            }
+
+            return rage;
         }
         #endregion
     }

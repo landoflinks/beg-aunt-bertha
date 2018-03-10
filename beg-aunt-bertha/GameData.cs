@@ -232,5 +232,24 @@ namespace beg_aunt_bertha
             return rage;
         }
         #endregion
+
+        #region CheckBoredom
+        // Checks the player's boredom. Boredom can't be less than 1. Boredom = 10 is a game over!
+        public int CheckBoredom(int blah)
+        {
+            if (blah < 1)
+            {
+                blah = 1;
+            }
+
+            if (blah <= 10)
+            {
+                blah = 10;
+                // Call GameOver function.
+            }
+
+            return blah;
+        }
+        #endregion
     }
 }

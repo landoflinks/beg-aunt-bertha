@@ -251,5 +251,31 @@ namespace beg_aunt_bertha
             return blah;
         }
         #endregion
+
+        #region GameOver
+        // Handles a game over.
+        public void GameOver()
+        {
+            // Check if Bertha is supremely ticked.
+            if (Anger == 10)
+            {
+                Console.WriteLine("You have REALLY pushed Aunt Bertha to her limit!");
+                Console.WriteLine("She forces you to stay in the same room as her for the rest of the afternoon, " +
+                    "and you aren't allowed to do ANYTHING except stare at the wall and think about 'what you've done'.");
+                Console.WriteLine("Aunt Bertha doesn't take her eyes off of you for ONE SECOND.");
+                Console.WriteLine("Better luck next time!");
+                Console.WriteLine("Final Time: " + CurrentTime.ToString());
+                Console.WriteLine("Boredom: " + Boredom.ToString());
+            }
+
+            // Are you bored to death?
+            if (Boredom == 10)
+            {
+
+            }
+
+            // Play again?
+        }
+        #endregion
     }
 }

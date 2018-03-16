@@ -183,6 +183,9 @@ namespace beg_aunt_bertha
                     break;
             }
 
+            // For now, BadSeed contributes to Bertha's anger level.
+            Anger += BadSeed;
+
             return Convert.ToInt32(answer);
         }
 

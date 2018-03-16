@@ -227,6 +227,7 @@ namespace beg_aunt_bertha
             {
                 rage = 10;
                 // Call GameOver function.
+                GameOver();
             }
 
             return rage;
@@ -246,6 +247,7 @@ namespace beg_aunt_bertha
             {
                 blah = 10;
                 // Call GameOver function.
+                GameOver();
             }
 
             return blah;
@@ -276,8 +278,6 @@ namespace beg_aunt_bertha
                 Console.WriteLine("Bertha has won. No matter what you do, her dullness and keen eye have thwarted you.");
                 Console.WriteLine("Final Time: " + CurrentTime.ToString());
             }
-
-            // Play again?
         }
         #endregion
     }

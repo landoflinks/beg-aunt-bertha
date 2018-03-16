@@ -265,13 +265,16 @@ namespace beg_aunt_bertha
                 Console.WriteLine("Aunt Bertha doesn't take her eyes off of you for ONE SECOND.");
                 Console.WriteLine("Better luck next time!");
                 Console.WriteLine("Final Time: " + CurrentTime.ToString());
-                Console.WriteLine("Boredom: " + Boredom.ToString());
             }
 
             // Are you bored to death?
             if (Boredom == 10)
             {
-
+                Console.WriteLine("You're at your wit's end. You can't take it anymore.");
+                Console.WriteLine("You knew today was doomed before your mom got off the phone. But you tried anyway.");
+                Console.WriteLine("You retreat to your room for the rest of the day and lounge on your bed.");
+                Console.WriteLine("Bertha has won. No matter what you do, her dullness and keen eye have thwarted you.");
+                Console.WriteLine("Final Time: " + CurrentTime.ToString());
             }
 
             // Play again?

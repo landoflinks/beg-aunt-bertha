@@ -101,12 +101,36 @@ namespace beg_aunt_bertha
         // This method details how reading went for the player.
         public void Read()
         {
-            TimeSpan fifteen = new TimeSpan(0, 15, 0);
             TimeSpan thirty = new TimeSpan(0, 30, 0);
             TimeSpan oneHour = new TimeSpan(1, 0, 0);
             int readNum;
             Random rand = new Random();
             readNum = rand.Next(1, 4);
+
+            switch (readNum)
+            {
+                case 1:
+                    Console.WriteLine("You go back to your room and look through some comics for a bit. Bertha doesn't approve.");
+                    Boredom -= 1;
+                    Anger += 1;
+                    CurrentTime = CurrentTime.Add(thirty);
+                    break;
+                case 2:
+                    Console.WriteLine("You mention to Bertha that you're going to read, and she shoves a book into your hands.");
+                    Console.WriteLine("Now, you've read some classic novels that aren't bad at all, but this one is downright BORING.");
+                    Boredom += 2;
+                    CurrentTime = CurrentTime.Add(oneHour);
+                    break;
+                case 3:
+                    Console.WriteLine("You go to your room and pull a book from your shelf. You've read it about fifty times.");
+                    CurrentTime = CurrentTime.Add(oneHour);
+                    break;
+                case 4:
+                    Console.WriteLine("Since Bertha won't let you PLAY games, you go to your room and read through game MANUALS.");
+                    Boredom -= 1;
+                    CurrentTime = CurrentTime.Add(thirty);
+                    break;
+            }
         }
 
         #endregion

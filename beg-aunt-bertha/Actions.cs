@@ -182,6 +182,19 @@ namespace beg_aunt_bertha
             }
         }
         #endregion
+
+        #region DieFromBoredom
+        // This is the method that handles the laziest option, sitting around bored.
+        public void DieFromBoredom()
+        {
+            Console.WriteLine("Really? Really?! REALLY?!");
+            Console.WriteLine("Come on! This is your first day of summer vacation!");
+            Console.WriteLine("You can't roll over and let Bertha win this easily!");
+            Console.WriteLine("Get out there and salvage what you can of this day!");
+            Boredom += 1;
+            CurrentTime = CurrentTime.Add(new TimeSpan(0, 15, 0));
+        }
+        #endregion
         #endregion
     }
 }

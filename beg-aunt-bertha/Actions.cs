@@ -134,6 +134,42 @@ namespace beg_aunt_bertha
         }
 
         #endregion
+
+        #region Television
+        // This method how successful the player is with watching TV.
+        public void Television()
+        {
+            TimeSpan fifteen = new TimeSpan(0, 15, 0);
+            TimeSpan thirty = new TimeSpan(0, 30, 0);
+            TimeSpan oneHour = new TimeSpan(1, 0, 0);
+            int tvNum;
+            Random rand = new Random();
+            tvNum = rand.Next(1, 6);
+
+            switch (tvNum)
+            {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+
+                case 6:
+
+                    break;
+            }
+        }
+        #endregion
         #endregion
     }
 }

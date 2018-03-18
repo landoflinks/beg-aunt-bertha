@@ -40,6 +40,10 @@ namespace beg_aunt_bertha
                         // Calls the Outside() method.
                         action.Outside();
                         break;
+                    case "R":
+                        // Calls the Read() method.
+                        action.Read();
+                        break;
                     case "P":
                         // Used to access the Pause Menu.
                         pauseMenu.PauseMenu(stats);

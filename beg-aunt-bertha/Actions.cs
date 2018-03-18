@@ -96,6 +96,20 @@ namespace beg_aunt_bertha
                     
              }
         #endregion
+
+        #region Read
+        // This method details how reading went for the player.
+        public void Read()
+        {
+            TimeSpan fifteen = new TimeSpan(0, 15, 0);
+            TimeSpan thirty = new TimeSpan(0, 30, 0);
+            TimeSpan oneHour = new TimeSpan(1, 0, 0);
+            int readNum;
+            Random rand = new Random();
+            readNum = rand.Next(1, 4);
+        }
+
+        #endregion
         #endregion
     }
 }

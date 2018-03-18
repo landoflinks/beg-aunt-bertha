@@ -136,7 +136,7 @@ namespace beg_aunt_bertha
         #endregion
 
         #region Television
-        // This method how successful the player is with watching TV.
+        // This method details how successful the player is with watching TV.
         public void Television()
         {
             TimeSpan fifteen = new TimeSpan(0, 15, 0);
@@ -149,23 +149,35 @@ namespace beg_aunt_bertha
             switch (tvNum)
             {
                 case 1:
-
+                    Console.WriteLine("Surprisingly, Bertha lets you have the TV remote for half an hour.");
+                    Console.WriteLine("You think this good will could be because none of her shows are on, but you roll with it.");
+                    Boredom -= 1;
+                    CurrentTime = CurrentTime.Add(thirty);
                     break;
                 case 2:
-
+                    Console.WriteLine("Bertha allows you to watch TV, but she forces you to watch stale old sitcoms from the seventies.");
+                    Boredom += 2;
+                    CurrentTime = CurrentTime.Add(thirty);
                     break;
                 case 3:
-
+                    Console.WriteLine("Bertha is on the phone with a good friend, so you get the TV to yourself for an hour.");
+                    Boredom -= 2;
+                    CurrentTime = CurrentTime.Add(oneHour);
                     break;
                 case 4:
-
+                    Console.WriteLine("Aunt Bertha reluctantly lets you watch TV, then steals the remote again a few minutes later.");
+                    Console.WriteLine("Apparently she doesn't approve of Spongebob.");
+                    Boredom += 1;
+                    CurrentTime = CurrentTime.Add(fifteen);
                     break;
                 case 5:
-
+                    Console.WriteLine("Aunt Bertha is in the middle of a soap opera, so she won't let you even breathe on the remote.");
+                    Boredom += 1;
                     break;
-
                 case 6:
-
+                    Console.WriteLine("You attempt to watch a TV movie on Hallmark, thinking that Aunt Bertha will approve. She doesn't.");
+                    Boredom += 1;
+                    CurrentTime = CurrentTime.Add(fifteen);
                     break;
             }
         }

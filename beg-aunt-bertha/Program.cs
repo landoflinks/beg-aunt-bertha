@@ -47,6 +47,9 @@ namespace beg_aunt_bertha
                     case "T":
                         action.Television();
                         break;
+                    case "S":
+                        action.DieFromBoredom();
+                        break;
                     case "P":
                         // Used to access the Pause Menu.
                         pauseMenu.PauseMenu(stats);

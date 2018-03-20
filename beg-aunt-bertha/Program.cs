@@ -50,6 +50,8 @@ namespace beg_aunt_bertha
                     case "S":
                         action.DieFromBoredom();
                         break;
+                    case "V":
+                        break;
                     case "P":
                         // Used to access the Pause Menu.
                         pauseMenu.PauseMenu(stats);

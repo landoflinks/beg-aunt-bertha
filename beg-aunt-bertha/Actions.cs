@@ -196,6 +196,38 @@ namespace beg_aunt_bertha
         }
         #endregion
 
+        #region VideoGames
+        /* This method handles the player's attempts to play video games.
+        Some of the results will depend on what Bertha is currently doing.
+        This method relies on randoms, but uses larger numbers akin to dice rolls. */
+        public void VideoGames()
+        {
+            TimeSpan fifteen = new TimeSpan(0, 15, 0);
+            TimeSpan thirty = new TimeSpan(0, 30, 0);
+            TimeSpan oneHour = new TimeSpan(1, 0, 0);
+            int videoNum, answer;
+            Random rand = new Random();
+            videoNum = rand.Next(1, 4);
+
+            Console.WriteLine("Bertha's current status: " + BerthaStatus);
+
+            Console.WriteLine("Choose one of the following gaming sources: 1 - TV, 2 - Computer, 3 - Handheld, 4 - Phone/Mobile");
+            Console.Write("Enter in a value: ");
+            answer = Convert.ToInt32(Console.ReadLine());
+
+            switch (answer)
+            {
+                case 1: // TV - Depends on if Bertha is using it.
+                    break;
+                case 2: // Computer - Depends on if Bertha is using it.
+                    break;
+                case 3: // Make sure Bertha doesn't catch you!
+                    break;
+                case 4: // Your personal device. Bertha can limit your time with it.
+                    break;
+            }
+        }
+        #endregion
         #endregion
     }
 }

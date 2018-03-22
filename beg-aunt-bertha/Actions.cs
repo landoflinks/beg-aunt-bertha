@@ -218,6 +218,45 @@ namespace beg_aunt_bertha
             switch (answer)
             {
                 case 1: // TV - Depends on if Bertha is using it.
+                    if (BerthaStatus == "Watching TV" || BerthaStatus == "Bawling her eyes out over a predictable soap opera twist") 
+                    {
+                        Console.WriteLine("You try to boot up the game system hooked to the TV, but Aunt Bertha won't let you.");
+                        Console.WriteLine("For the time being, Bertha has taken over the television.");
+                        Anger += 1;
+                    }
+                    else
+                    {
+                        switch (videoNum)
+                        {
+                            case 1:
+                                Console.WriteLine("You sneaked in fifteen minutes of game time before you were caught. Not much, but it'll do for now.");
+                                Anger += 1;
+                                Boredom -= 1;
+                                CurrentTime = CurrentTime.Add(fifteen);
+                                break;
+                            case 2:
+                                Console.WriteLine("You turn on your game system only to find Bertha behind you.");
+                                Console.WriteLine("She turns it off and scolds you about too much screen time.");
+                                Boredom += 1;
+                                Anger += 1;
+                                CurrentTime = CurrentTime.Add(fifteen);
+                                break;
+                            case 3:
+                                Console.WriteLine("Bertha is outside taking care of your cat. Somehow it got stuck in a tree.");
+                                Console.WriteLine("You have absolutely NO IDEA how an indoor cat wound up in a tree outdoors. None at all.");
+                                Console.WriteLine("For now, you're going to spend some time in front of YOUR television.");
+                                Boredom -= 2;
+                                Anger += 1;
+                                CurrentTime = CurrentTime.Add(thirty);
+                                break;
+                            case 4:
+                                Console.WriteLine("Bertha surprisingly let you boot up a game, but takes back that privilege a minute later.");
+                                Console.WriteLine("She dislikes the title of what is suggestively a 'violent' game.");
+                                Anger += 2;
+                                Boredom += 1;
+                                break;
+                        }
+                    }
                     break;
                 case 2: // Computer - Depends on if Bertha is using it.
                     break;

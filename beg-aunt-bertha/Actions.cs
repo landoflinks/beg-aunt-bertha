@@ -269,7 +269,35 @@ namespace beg_aunt_bertha
                     }
                     else
                     {
-
+                        switch (videoNum)
+                        {
+                            case 1:
+                                Console.WriteLine("The computer doesn't really want to work correctly today. You wonder if Bertha did something...");
+                                Console.WriteLine("You spend a few minutes fiddling around with it until you give up.");
+                                Boredom += 2;
+                                CurrentTime = CurrentTime.Add(fifteen);
+                                break;
+                            case 2:
+                                Console.WriteLine("You're able to secure an hour of precious computer time while Bertha chews out her ex on the phone.");
+                                Boredom -= 2;
+                                Anger += 2;
+                                CurrentTime = CurrentTime.Add(oneHour);
+                                break;
+                            case 3:
+                                Console.WriteLine("Bertha catches you trying to use the computer.");
+                                Console.WriteLine("Surprisingly, your aren't kicked off. Instead, she makes you watch educational vidoes for little kids. Boring!");
+                                Boredom += 1;
+                                Anger -= 1;
+                                CurrentTime = CurrentTime.Add(thirty);
+                                break;
+                            case 4:
+                                Console.WriteLine("You successfully convince Aunt Bertha to let you play a 'harmless' game.");
+                                Console.WriteLine("You switch to the REAL game while she isn't looking. Unfortunately, she realizes her mistake.");
+                                Boredom -= 1;
+                                Agner += 1;
+                                CurrentTime = CurrentTime.Add(thirty);
+                                break;
+                        }
                     }
                     break;
                 case 3: // Make sure Bertha doesn't catch you!

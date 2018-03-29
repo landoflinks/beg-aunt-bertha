@@ -227,10 +227,11 @@ namespace beg_aunt_bertha
                     }
                     else
                     {
+                        Console.WriteLine("The only decent TV in the house is in your family's living room.");
                         switch (videoNum)
                         {
                             case 1:
-                                Console.WriteLine("You sneaked in fifteen minutes of game time before you were caught. Not much, but it'll do for now.");
+                                Console.WriteLine("You snuck in fifteen minutes of game time before you were caught. Not much, but it'll do for now.");
                                 Anger += 1;
                                 Boredom -= 1;
                                 CurrentTime = CurrentTime.Add(fifteen);
@@ -269,6 +270,7 @@ namespace beg_aunt_bertha
                     }
                     else
                     {
+                        Console.WriteLine("There sits mom's computer, in all of it's wonderful, mid-end glory.");
                         switch (videoNum)
                         {
                             case 1:
@@ -294,13 +296,46 @@ namespace beg_aunt_bertha
                                 Console.WriteLine("You successfully convince Aunt Bertha to let you play a 'harmless' game.");
                                 Console.WriteLine("You switch to the REAL game while she isn't looking. Unfortunately, she realizes her mistake.");
                                 Boredom -= 1;
-                                Agner += 1;
+                                Anger += 1;
                                 CurrentTime = CurrentTime.Add(thirty);
                                 break;
                         }
                     }
                     break;
                 case 3: // Make sure Bertha doesn't catch you!
+                    Console.WriteLine("Ah, time for the trusty handheld that you picked up last year.");
+                    switch (videoNum)
+                    {
+                        case 1:
+                            Console.WriteLine("You pull out your handheld, then realize Bertha is standing behind you.");
+                            Console.WriteLine("You quickly lie and tell her that it's an 'educational' device.");
+                            Console.WriteLine("To convince her, you play a meh-ish pet sim that was on sale for a little while.");
+                            Anger -= 1;
+                            Boredom += 1;
+                            CurrentTime = CurrentTime.Add(thirty);
+                            break;
+                        case 2:
+                            Console.WriteLine("You try to play your handheld, but then realize that it needs charged badly.");
+                            Console.WriteLine("You can't find the main charger, so you suspect you left it on the couch where Bertha is.");
+                            Console.WriteLine("You loaned your spare charger to a friend while she's on vacation.");
+                            Boredom += 1;
+                            break;
+                        case 3:
+                            Console.WriteLine("You sneak off to your room and get a good gaming session in under your bed.");
+                            Console.WriteLine("Bertha soon finds you and is furious, having believed you 'snuck out'.");
+                            Anger += 2;
+                            Boredom -= 2;
+                            CurrentTime = CurrentTime.Add(oneHour);
+                            break;
+                        case 4:
+                            Console.WriteLine("You pull out your handheld and start playing your favorite game for the device.");
+                            Console.WriteLine("Bertha grabs it out of your hands after a few minutes and asks what kind of 'phone' it is.");
+                            Console.WriteLine("After you explain, she confiscates the device in a very accessible place...Hmmmmm....");
+                            Anger += 1;
+                            Boredom -= 1;
+                            CurrentTime = CurrentTime.Add(fifteen);
+                            break;
+                    }
                     break;
                 case 4: // Your personal device. Bertha can limit your time with it.
                     break;

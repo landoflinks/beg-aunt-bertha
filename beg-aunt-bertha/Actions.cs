@@ -223,6 +223,7 @@ namespace beg_aunt_bertha
                         Console.WriteLine("You try to boot up the game system hooked to the TV, but Aunt Bertha won't let you.");
                         Console.WriteLine("For the time being, Bertha has taken over the television.");
                         Anger += 1;
+                        Boredom += 1;
                     }
                     else
                     {
@@ -259,6 +260,17 @@ namespace beg_aunt_bertha
                     }
                     break;
                 case 2: // Computer - Depends on if Bertha is using it.
+                    if (BerthaStatus == "Checking Facebook on mom's computer")
+                    {
+                        Console.WriteLine("You attempt to get onto your mom's computer to play games, but Bertha is hogging it.");
+                        Console.WriteLine("You just hope that she doesn't somehow delete everything. She's not very tech-savvy.");
+                        Anger += 1;
+                        Boredom += 1;
+                    }
+                    else
+                    {
+
+                    }
                     break;
                 case 3: // Make sure Bertha doesn't catch you!
                     break;

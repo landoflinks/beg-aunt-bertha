@@ -337,7 +337,38 @@ namespace beg_aunt_bertha
                             break;
                     }
                     break;
-                case 4: // Your personal device. Bertha can limit your time with it.
+                case 4: // Your personal smart device..
+                    Console.WriteLine("Thankfully, mom let you get a smart phone last Christmas. Your data is limited, but you have Wi-Fi.");
+                    switch (videoNum)
+                    {
+                        case 1:
+                            Console.WriteLine("You start playing a harmless, popular phone game. Maybe Bertha won't mind?");
+                            Console.WriteLine("Wrong! She takes your phone and lectures you about 'morals'.");
+                            Anger += 1;
+                            Boredom += 1;
+                            CurrentTime = CurrentTime.Add(fifteen);
+                            break;
+                        case 2:
+                            Console.WriteLine("You take a chance and play a match-3 game that isn't half bad.");
+                            Console.WriteLine("Bertha doesn't seem to mind since she does that sort of thing on Facebook.");
+                            Anger -= 1;
+                            Boredom -= 1;
+                            CurrentTime.Add(thirty);
+                            break;
+                        case 3:
+                            Console.WriteLine("So as it turns out...the Wi-Fi is currently offline. Stupid internet company.");
+                            Boredom += 1;
+                            break;
+                        case 4:
+                            Console.WriteLine("You come up with an ingenious idea while texting a friend.");
+                            Console.WriteLine("You text back and forth in a sort of old-school text roleplaying game.");
+                            Console.WriteLine("Bertha gives you a disapproving glance more than once, but says nothing.");
+                            Console.WriteLine("The game is weird and impromptu, but you find yourself enjoying it.");
+                            Anger += 1;
+                            Boredom -= 2;
+                            CurrentTime = CurrentTime.Add(oneHour);
+                            break;
+                    }
                     break;
             }
         }

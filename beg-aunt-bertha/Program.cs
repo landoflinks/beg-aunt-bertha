@@ -62,7 +62,9 @@ namespace beg_aunt_bertha
                 // Check the Anger and Boredom to make sure they are not out of bounds.
                 stats.CheckAnger(stats.Anger);
                 stats.CheckBoredom(stats.Boredom);
-                // Add CheckTime method to check if the player has won.
+
+                // Checks the current time and sets in-game events into motion accordingly.
+                stats.CheckTime();
 
                 Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
                 Console.Write("Enter in a command: ");

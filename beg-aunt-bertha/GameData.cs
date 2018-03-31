@@ -283,5 +283,15 @@ namespace beg_aunt_bertha
             }
         }
         #endregion
+
+        #region CheckTime
+        // Checks the time in the game and sets events in motion as needed.
+        public void CheckTime()
+        {
+            TimeSpan two = new TimeSpan(2,0,0), three = new TimeSpan(3,0,0);
+            TimeSpan four = new TimeSpan(4,0,0), five = new TimeSpan(5,0,0);
+            TimeSpan six = new TimeSpan(6, 0, 0), seven = new TimeSpan(7,0,0);
+        }
+        #endregion
     }
 }

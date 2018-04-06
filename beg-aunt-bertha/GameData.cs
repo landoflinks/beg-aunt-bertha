@@ -284,6 +284,28 @@ namespace beg_aunt_bertha
         }
         #endregion
 
+        #region Winner
+        // The game is won!
+        public void Winner()
+        {
+            Console.WriteLine("Congratulations! You've won!");
+            Console.WriteLine("You survived six hours with your least favorite aunt!");
+            
+            if (Boredom < 4)
+            {
+                Console.WriteLine("You actually managed to have some fun!");
+            }
+            else if (Boredom >= 4 && Boredom < 8)
+            {
+                Console.WriteLine("Things could have went better...but the afternoon wasn't a total wash, right?");
+            }
+            else
+            {
+                Console.WriteLine("You nearly died of boredom, but you survived...somehow.");
+            }
+        }
+        #endregion
+
         #region CheckTime
         // Checks the time in the game and sets events in motion as needed.
         public void CheckTime()

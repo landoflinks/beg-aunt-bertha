@@ -329,7 +329,7 @@ namespace beg_aunt_bertha
 
             if (CurrentTime >= seven)
             {
-                // The game has been won!
+                Winner();
             }
         }
         #endregion

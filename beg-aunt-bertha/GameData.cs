@@ -291,6 +291,24 @@ namespace beg_aunt_bertha
             TimeSpan two = new TimeSpan(2,0,0), three = new TimeSpan(3,0,0);
             TimeSpan four = new TimeSpan(4,0,0), five = new TimeSpan(5,0,0);
             TimeSpan six = new TimeSpan(6, 0, 0), seven = new TimeSpan(7,0,0);
+
+            // Change Bertha's status during odd hours.
+            if (CurrentTime < two || (CurrentTime >= three && CurrentTime <= four)
+               || (CurrentTime >= five && CurrentTime <= six))
+            {
+                SetBerthaStatus();
+            }
+
+            // Change the weather halfway through the afternoon (four).
+            if (CurrentTime >= four && CurrentTime <= five)
+            {
+                SetWeather();
+            }
+
+            if (CurrentTime >= seven)
+            {
+                // The game has been won!
+            }
         }
         #endregion
     }

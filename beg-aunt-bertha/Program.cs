@@ -66,6 +66,8 @@ namespace beg_aunt_bertha
                 // Checks the current time and sets in-game events into motion accordingly.
                 stats.CheckTime();
 
+                Console.WriteLine();
+                Console.WriteLine("Current Time: " + stats.CurrentTime);
                 Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
                 Console.Write("Enter in a command: ");
                 answer = Convert.ToString(Console.ReadLine()).ToUpper();

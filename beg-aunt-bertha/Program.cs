@@ -38,20 +38,20 @@ namespace beg_aunt_bertha
                         break;
                     case "O":
                         // Calls the Outside() method.
-                        action.Outside();
+                        action.Outside(stats.CurrentTime);
                         break;
                     case "R":
                         // Calls the Read() method.
-                        action.Read();
+                        action.Read(stats.CurrentTime);
                         break;
                     case "T":
-                        action.Television();
+                        action.Television(stats.CurrentTime);
                         break;
                     case "S":
-                        action.DieFromBoredom();
+                        action.DieFromBoredom(stats.CurrentTime);
                         break;
                     case "V":
-                        action.VideoGames();
+                        action.VideoGames(stats.CurrentTime);
                         break;
                     case "P":
                         // Used to access the Pause Menu.

@@ -27,7 +27,7 @@ namespace beg_aunt_bertha
         #region Outside
         /* This method details what was done outside. 
         A number generator determines the outcome. */
-            public void Outside()
+            public TimeSpan Outside(TimeSpan time)
                 {
                     // If the weather is rainy, skip any outside activities.
                     if (Weather == "Thunderstorm" || Weather == "Light Rain")
@@ -49,27 +49,27 @@ namespace beg_aunt_bertha
                             case 1:
                                 Console.WriteLine("You find a stick and draw pictures in the dirt. Boring!");
                                 Boredom += 1;
-                                CurrentTime = CurrentTime.Add(fifteen);
+                                time = time.Add(fifteen);
                                 break;
                             case 2:
                                 Console.WriteLine("You play catch with the neighbor's dog. It's kinda fun minus the slobber.");
                                 Boredom -= 1;
-                                CurrentTime = CurrentTime.Add(thirty);
+                                time = time.Add(thirty);
                                 break;
                             case 3:
                                 Console.WriteLine("You stare at patterns in the clouds.");
                                 Boredom -= 1;
-                                CurrentTime = CurrentTime.Add(fifteen);
+                                time = time.Add(fifteen);
                         break;
                             case 4:
                                 Console.WriteLine("You get together with some of the neighborhood kids and play a sport you like in a park across the street.");
                                 Boredom -= 2;
-                                CurrentTime = CurrentTime.Add(oneHour);
+                                time = time.Add(oneHour);
                         break;
                             case 5:
                                 Console.WriteLine("You play a sport with some of the neighborhood kids across the street, but you secretly hate it.");
                                 Boredom += 2;
-                                CurrentTime = CurrentTime.Add(oneHour);
+                                time = time.Add(oneHour);
                                 break;
                             case 6:
                                 Console.WriteLine("You grab your skateboard for some sidewalk surfing action, but Aunt Bertha confiscates it.");
@@ -89,17 +89,17 @@ namespace beg_aunt_bertha
                             case 9:
                                 Console.WriteLine("You sneak over to a neighbor kid's house and play video games for as long as you dare.");
                                 Boredom -= 3;
-                                CurrentTime = CurrentTime.Add(oneHour);
+                                time = time.Add(oneHour);
                                 break;
-                }
+                        }
                     }
-                    
+            return time;
              }
         #endregion
 
         #region Read
         // This method details how reading went for the player.
-        public void Read()
+        public TimeSpan Read(TimeSpan time)
         {
             TimeSpan thirty = new TimeSpan(0, 30, 0);
             TimeSpan oneHour = new TimeSpan(1, 0, 0);
@@ -113,31 +113,32 @@ namespace beg_aunt_bertha
                     Console.WriteLine("You go back to your room and look through some comics for a bit. Bertha doesn't approve.");
                     Boredom -= 1;
                     Anger += 1;
-                    CurrentTime = CurrentTime.Add(thirty);
+                    time = time.Add(thirty);
                     break;
                 case 2:
                     Console.WriteLine("You mention to Bertha that you're going to read, and she shoves a book into your hands.");
                     Console.WriteLine("Now, you've read some classic novels that aren't bad at all, but this one is downright BORING.");
                     Boredom += 2;
-                    CurrentTime = CurrentTime.Add(oneHour);
+                    time = time.Add(oneHour);
                     break;
                 case 3:
                     Console.WriteLine("You go to your room and pull a book from your shelf. You've read it about fifty times.");
-                    CurrentTime = CurrentTime.Add(oneHour);
+                    time = time.Add(oneHour);
                     break;
                 case 4:
                     Console.WriteLine("Since Bertha won't let you PLAY games, you go to your room and read through game MANUALS.");
                     Boredom -= 1;
-                    CurrentTime = CurrentTime.Add(thirty);
+                    time = time.Add(thirty);
                     break;
             }
+            return time;
         }
 
         #endregion
 
         #region Television
         // This method details how successful the player is with watching TV.
-        public void Television()
+        public TimeSpan Television(TimeSpan time)
         {
             TimeSpan fifteen = new TimeSpan(0, 15, 0);
             TimeSpan thirty = new TimeSpan(0, 30, 0);
@@ -152,23 +153,23 @@ namespace beg_aunt_bertha
                     Console.WriteLine("Surprisingly, Bertha lets you have the TV remote for half an hour.");
                     Console.WriteLine("You think this good will could be because none of her shows are on, but you roll with it.");
                     Boredom -= 1;
-                    CurrentTime = CurrentTime.Add(thirty);
+                    time = time.Add(thirty);
                     break;
                 case 2:
                     Console.WriteLine("Bertha allows you to watch TV, but she forces you to watch stale old sitcoms from the seventies.");
                     Boredom += 2;
-                    CurrentTime = CurrentTime.Add(thirty);
+                    time = time.Add(thirty);
                     break;
                 case 3:
                     Console.WriteLine("Bertha is on the phone with a good friend, so you get the TV to yourself for an hour.");
                     Boredom -= 2;
-                    CurrentTime = CurrentTime.Add(oneHour);
+                    time = time.Add(oneHour);
                     break;
                 case 4:
                     Console.WriteLine("Aunt Bertha reluctantly lets you watch TV, then steals the remote again a few minutes later.");
                     Console.WriteLine("Apparently she doesn't approve of Spongebob.");
                     Boredom += 1;
-                    CurrentTime = CurrentTime.Add(fifteen);
+                    time = time.Add(fifteen);
                     break;
                 case 5:
                     Console.WriteLine("Aunt Bertha is in the middle of a soap opera, so she won't let you even breathe on the remote.");
@@ -177,22 +178,25 @@ namespace beg_aunt_bertha
                 case 6:
                     Console.WriteLine("You attempt to watch a TV movie on Hallmark, thinking that Aunt Bertha will approve. She doesn't.");
                     Boredom += 1;
-                    CurrentTime = CurrentTime.Add(fifteen);
+                    time = time.Add(fifteen);
                     break;
             }
+            return time;
         }
         #endregion
 
         #region DieFromBoredom
         // This is the method that handles the laziest option, sitting around bored.
-        public void DieFromBoredom()
+        public TimeSpan DieFromBoredom(TimeSpan time)
         {
             Console.WriteLine("Really? Really?! REALLY?!");
             Console.WriteLine("Come on! This is your first day of summer vacation!");
             Console.WriteLine("You can't roll over and let Bertha win this easily!");
             Console.WriteLine("Get out there and salvage what you can of this day!");
             Boredom += 1;
-            CurrentTime = CurrentTime.Add(new TimeSpan(0, 15, 0));
+            time = time.Add(new TimeSpan(0, 15, 0));
+
+            return time;
         }
         #endregion
 
@@ -200,7 +204,7 @@ namespace beg_aunt_bertha
         /* This method handles the player's attempts to play video games.
         Some of the results will depend on what Bertha is currently doing.
         This method relies on randoms, but uses larger numbers akin to dice rolls. */
-        public void VideoGames()
+        public TimeSpan VideoGames(TimeSpan time)
         {
             TimeSpan fifteen = new TimeSpan(0, 15, 0);
             TimeSpan thirty = new TimeSpan(0, 30, 0);
@@ -234,14 +238,14 @@ namespace beg_aunt_bertha
                                 Console.WriteLine("You snuck in fifteen minutes of game time before you were caught. Not much, but it'll do for now.");
                                 Anger += 1;
                                 Boredom -= 1;
-                                CurrentTime = CurrentTime.Add(fifteen);
+                                time = time.Add(fifteen);
                                 break;
                             case 2:
                                 Console.WriteLine("You turn on your game system only to find Bertha behind you.");
                                 Console.WriteLine("She turns it off and scolds you about too much screen time.");
                                 Boredom += 1;
                                 Anger += 1;
-                                CurrentTime = CurrentTime.Add(fifteen);
+                                time = time.Add(fifteen);
                                 break;
                             case 3:
                                 Console.WriteLine("Bertha is outside taking care of your cat. Somehow it got stuck in a tree.");
@@ -249,7 +253,7 @@ namespace beg_aunt_bertha
                                 Console.WriteLine("For now, you're going to spend some time in front of YOUR television.");
                                 Boredom -= 2;
                                 Anger += 1;
-                                CurrentTime = CurrentTime.Add(thirty);
+                                time = time.Add(thirty);
                                 break;
                             case 4:
                                 Console.WriteLine("Bertha surprisingly let you boot up a game, but takes back that privilege a minute later.");
@@ -277,27 +281,27 @@ namespace beg_aunt_bertha
                                 Console.WriteLine("The computer doesn't really want to work correctly today. You wonder if Bertha did something...");
                                 Console.WriteLine("You spend a few minutes fiddling around with it until you give up.");
                                 Boredom += 2;
-                                CurrentTime = CurrentTime.Add(fifteen);
+                                time = time.Add(fifteen);
                                 break;
                             case 2:
                                 Console.WriteLine("You're able to secure an hour of precious computer time while Bertha chews out her ex on the phone.");
                                 Boredom -= 2;
                                 Anger += 2;
-                                CurrentTime = CurrentTime.Add(oneHour);
+                                time = time.Add(oneHour);
                                 break;
                             case 3:
                                 Console.WriteLine("Bertha catches you trying to use the computer.");
                                 Console.WriteLine("Surprisingly, your aren't kicked off. Instead, she makes you watch educational vidoes for little kids. Boring!");
                                 Boredom += 1;
                                 Anger -= 1;
-                                CurrentTime = CurrentTime.Add(thirty);
+                                time = time.Add(thirty);
                                 break;
                             case 4:
                                 Console.WriteLine("You successfully convince Aunt Bertha to let you play a 'harmless' game.");
                                 Console.WriteLine("You switch to the REAL game while she isn't looking. Unfortunately, she realizes her mistake.");
                                 Boredom -= 1;
                                 Anger += 1;
-                                CurrentTime = CurrentTime.Add(thirty);
+                                time = time.Add(thirty);
                                 break;
                         }
                     }
@@ -312,7 +316,7 @@ namespace beg_aunt_bertha
                             Console.WriteLine("To convince her, you play a meh-ish pet sim that was on sale for a little while.");
                             Anger -= 1;
                             Boredom += 1;
-                            CurrentTime = CurrentTime.Add(thirty);
+                            time = time.Add(thirty);
                             break;
                         case 2:
                             Console.WriteLine("You try to play your handheld, but then realize that it needs charged badly.");
@@ -325,7 +329,7 @@ namespace beg_aunt_bertha
                             Console.WriteLine("Bertha soon finds you and is furious, having believed you 'snuck out'.");
                             Anger += 2;
                             Boredom -= 2;
-                            CurrentTime = CurrentTime.Add(oneHour);
+                            time = time.Add(oneHour);
                             break;
                         case 4:
                             Console.WriteLine("You pull out your handheld and start playing your favorite game for the device.");
@@ -333,7 +337,7 @@ namespace beg_aunt_bertha
                             Console.WriteLine("After you explain, she confiscates the device in a very accessible place...Hmmmmm....");
                             Anger += 1;
                             Boredom -= 1;
-                            CurrentTime = CurrentTime.Add(fifteen);
+                            time = time.Add(fifteen);
                             break;
                     }
                     break;
@@ -346,14 +350,14 @@ namespace beg_aunt_bertha
                             Console.WriteLine("Wrong! She takes your phone and lectures you about 'morals'.");
                             Anger += 1;
                             Boredom += 1;
-                            CurrentTime = CurrentTime.Add(fifteen);
+                            time = time.Add(fifteen);
                             break;
                         case 2:
                             Console.WriteLine("You take a chance and play a match-3 game that isn't half bad.");
                             Console.WriteLine("Bertha doesn't seem to mind since she does that sort of thing on Facebook.");
                             Anger -= 1;
                             Boredom -= 1;
-                            CurrentTime.Add(thirty);
+                            time = time.Add(thirty);
                             break;
                         case 3:
                             Console.WriteLine("So as it turns out...the Wi-Fi is currently offline. Stupid internet company.");
@@ -366,11 +370,12 @@ namespace beg_aunt_bertha
                             Console.WriteLine("The game is weird and impromptu, but you find yourself enjoying it.");
                             Anger += 1;
                             Boredom -= 2;
-                            CurrentTime = CurrentTime.Add(oneHour);
+                            time = time.Add(oneHour);
                             break;
                     }
                     break;
             }
+            return time;
         }
         #endregion
         #endregion

@@ -217,30 +217,22 @@ namespace beg_aunt_bertha
         }
         #endregion
 
-        #region CheckAnger
-        // Checks Aunt Bertha's anger. Anger can't be less than 1. Anger = 10 is a game over!
-        public int CheckAnger(int rage)
-        {
-            if (rage < 1)
-            {
-                rage = 1;
-            }
-
-            if (rage <= 10)
-            {
-                rage = 10;
-                // Call GameOver function.
-                GameOver();
-            }
-
-            return rage;
-        }
-        #endregion
-
         #region UpdateBoredom
         public void UpdateBoredom(int bored)
         {
             Boredom += bored;
+
+            if (Boredom < 1)
+            {
+                Boredom = 1;
+            }
+
+            if (Boredom <= 10)
+            {
+                Boredom = 10;
+                // Call GameOver function.
+                GameOver();
+            }
         }
         #endregion
 
@@ -248,26 +240,18 @@ namespace beg_aunt_bertha
         public void UpdateAnger(int rage)
         {
             Anger += rage;
-        }
-        #endregion
 
-        #region CheckBoredom
-        // Checks the player's boredom. Boredom can't be less than 1. Boredom = 10 is a game over!
-        public int CheckBoredom(int blah)
-        {
-            if (blah < 1)
+            if (Anger < 1)
             {
-                blah = 1;
+                Anger = 1;
             }
 
-            if (blah <= 10)
+            if (Anger <= 10)
             {
-                blah = 10;
+                Anger = 10;
                 // Call GameOver function.
                 GameOver();
             }
-
-            return blah;
         }
         #endregion
 

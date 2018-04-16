@@ -30,6 +30,7 @@ namespace beg_aunt_bertha
             public TimeSpan Outside(TimeSpan time)
                 {
                 TimeSpan newTime = new TimeSpan();
+                newTime = time;
                 // If the weather is rainy, skip any outside activities.
                 if (Weather == "Thunderstorm" || Weather == "Light Rain")
                     {
@@ -105,6 +106,7 @@ namespace beg_aunt_bertha
             TimeSpan thirty = new TimeSpan(0, 30, 0);
             TimeSpan oneHour = new TimeSpan(1, 0, 0);
             TimeSpan newTime = new TimeSpan();
+            newTime = time;
             int readNum;
             Random rand = new Random();
             readNum = rand.Next(1, 4);
@@ -146,6 +148,7 @@ namespace beg_aunt_bertha
             TimeSpan thirty = new TimeSpan(0, 30, 0);
             TimeSpan oneHour = new TimeSpan(1, 0, 0);
             TimeSpan newTime = new TimeSpan();
+            newTime = time;
             int tvNum;
             Random rand = new Random();
             tvNum = rand.Next(1, 6);
@@ -225,6 +228,7 @@ namespace beg_aunt_bertha
             TimeSpan thirty = new TimeSpan(0, 30, 0);
             TimeSpan oneHour = new TimeSpan(1, 0, 0);
             TimeSpan newTime = new TimeSpan();
+            newTime = time;
             int videoNum, answer;
             Random rand = new Random();
             videoNum = rand.Next(1, 4);

@@ -60,10 +60,6 @@ namespace beg_aunt_bertha
                         break;
                 }
 
-                // Check the Anger and Boredom to make sure they are not out of bounds.
-                stats.CheckAnger(stats.Anger);
-                stats.CheckBoredom(stats.Boredom);
-
                 // Checks the current time and sets in-game events into motion accordingly.
                 stats.CheckTime();
 

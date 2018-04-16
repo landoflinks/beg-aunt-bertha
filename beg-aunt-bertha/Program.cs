@@ -9,6 +9,7 @@ namespace beg_aunt_bertha
         static void Main(string[] args)
         {
             string answer;
+            TimeSpan newTime = new TimeSpan();
             GameData stats = new GameData();
             Actions action = new Actions();
             Pause pauseMenu = new Pause();
@@ -38,20 +39,20 @@ namespace beg_aunt_bertha
                         break;
                     case "O":
                         // Calls the Outside() method.
-                        stats.CurrentTime = action.Outside(stats.CurrentTime);
+                        newTime = action.Outside(stats.CurrentTime);
                         break;
                     case "R":
                         // Calls the Read() method.
-                        stats.CurrentTime = action.Read(stats.CurrentTime);
+                        newTime = action.Read(stats.CurrentTime);
                         break;
                     case "T":
-                        stats.CurrentTime = action.Television(stats.CurrentTime);
+                        newTime = action.Television(stats.CurrentTime);
                         break;
                     case "S":
-                        stats.CurrentTime = action.DieFromBoredom(stats.CurrentTime);
+                        newTime = action.DieFromBoredom(stats.CurrentTime);
                         break;
                     case "V":
-                        stats.CurrentTime = action.VideoGames(stats.CurrentTime);
+                        newTime = action.VideoGames(stats.CurrentTime);
                         break;
                     case "P":
                         // Used to access the Pause Menu.
@@ -67,10 +68,11 @@ namespace beg_aunt_bertha
                 stats.CheckTime();
 
                 Console.WriteLine();
-                Console.WriteLine("Current Time: " + stats.CurrentTime);
+                Console.WriteLine("Current Time: " + newTime); //stats.CurrentTime
                 Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
                 Console.Write("Enter in a command: ");
                 answer = Convert.ToString(Console.ReadLine()).ToUpper();
+                stats.CurrentTime = newTime;
             }
 
             Console.WriteLine("Thanks for playing!");

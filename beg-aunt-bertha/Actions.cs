@@ -142,7 +142,7 @@ namespace beg_aunt_bertha
 
         #region Television
         // This method details how successful the player is with watching TV.
-        public TimeSpan Television(TimeSpan time)
+        public TimeSpan Television(TimeSpan time, string bertha)
         {
             TimeSpan fifteen = new TimeSpan(0, 15, 0);
             TimeSpan thirty = new TimeSpan(0, 30, 0);
@@ -153,7 +153,7 @@ namespace beg_aunt_bertha
             Random rand = new Random();
             tvNum = rand.Next(1, 6);
 
-            if (BerthaStatus == "Watching TV" || BerthaStatus == "Bawling her eyes out over a predictable soap opera twist")
+            if (bertha == "Watching TV" || bertha == "Bawling her eyes out over a predictable soap opera twist")
             {
                 Console.WriteLine("You try to boot up the game system hooked to the TV, but Aunt Bertha won't let you.");
                 Console.WriteLine("For the time being, Bertha has taken over the television.");
@@ -222,7 +222,7 @@ namespace beg_aunt_bertha
         /* This method handles the player's attempts to play video games.
         Some of the results will depend on what Bertha is currently doing.
         This method relies on randoms, but uses larger numbers akin to dice rolls. */
-        public TimeSpan VideoGames(TimeSpan time)
+        public TimeSpan VideoGames(TimeSpan time, string bertha)
         {
             TimeSpan fifteen = new TimeSpan(0, 15, 0);
             TimeSpan thirty = new TimeSpan(0, 30, 0);
@@ -233,7 +233,7 @@ namespace beg_aunt_bertha
             Random rand = new Random();
             videoNum = rand.Next(1, 4);
 
-            Console.WriteLine("Bertha's current status: " + BerthaStatus);
+            Console.WriteLine("Bertha's current status: " + bertha);
 
             Console.WriteLine("Choose one of the following gaming sources: 1 - TV, 2 - Computer, 3 - Handheld, 4 - Phone/Mobile");
             Console.Write("Enter in a value: ");
@@ -242,7 +242,7 @@ namespace beg_aunt_bertha
             switch (answer)
             {
                 case 1: // TV - Depends on if Bertha is using it.
-                    if (BerthaStatus == "Watching TV" || BerthaStatus == "Bawling her eyes out over a predictable soap opera twist") 
+                    if (bertha == "Watching TV" || bertha == "Bawling her eyes out over a predictable soap opera twist") 
                     {
                         Console.WriteLine("You try to boot up the game system hooked to the TV, but Aunt Bertha won't let you.");
                         Console.WriteLine("For the time being, Bertha has taken over the television.");
@@ -285,7 +285,7 @@ namespace beg_aunt_bertha
                     }
                     break;
                 case 2: // Computer - Depends on if Bertha is using it.
-                    if (BerthaStatus == "Checking Facebook on mom's computer")
+                    if (bertha == "Checking Facebook on mom's computer")
                     {
                         Console.WriteLine("You attempt to get onto your mom's computer to play games, but Bertha is hogging it.");
                         Console.WriteLine("You just hope that she doesn't somehow delete everything. She's not very tech-savvy.");

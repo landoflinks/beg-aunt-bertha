@@ -11,7 +11,7 @@ namespace beg_aunt_bertha
             string answer;
             TimeSpan newTime = new TimeSpan();
             GameData stats = new GameData();
-            Actions action = new Actions();
+            Actions action = new Actions(stats);
             Pause pauseMenu = new Pause();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
@@ -39,20 +39,20 @@ namespace beg_aunt_bertha
                         break;
                     case "O":
                         // Calls the Outside() method.
-                        newTime = action.Outside(stats.CurrentTime);
+                        newTime = action.Outside(stats.CurrentTime, stats.Weather);
                         break;
                     case "R":
                         // Calls the Read() method.
                         newTime = action.Read(stats.CurrentTime);
                         break;
                     case "T":
-                        newTime = action.Television(stats.CurrentTime);
+                        newTime = action.Television(stats.CurrentTime, stats.BerthaStatus);
                         break;
                     case "S":
                         newTime = action.DieFromBoredom(stats.CurrentTime);
                         break;
                     case "V":
-                        newTime = action.VideoGames(stats.CurrentTime);
+                        newTime = action.VideoGames(stats.CurrentTime, stats.BerthaStatus);
                         break;
                     case "P":
                         // Used to access the Pause Menu.

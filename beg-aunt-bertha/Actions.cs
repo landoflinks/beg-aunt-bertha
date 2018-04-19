@@ -6,6 +6,18 @@ namespace beg_aunt_bertha
      * It primarily exists to free the main program of bloat. */
     class Actions : GameData
     {
+        //public GameData stats { get; set; } // Grab stats from GameData.cs
+
+        public Actions(GameData stats) // Sets defaults when game starts.
+        {
+            CurrentTime = stats.CurrentTime;
+            BadSeed = stats.BadSeed;
+            Boredom = stats.Boredom;
+            Anger = stats.Anger;
+            BerthaStatus = stats.BerthaStatus;
+            Weather = stats.Weather;
+        }
+
         #region GameCommands 
         // This method lists commands for the main game loop.
         public void GameCommands()

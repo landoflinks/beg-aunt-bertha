@@ -95,7 +95,7 @@ namespace beg_aunt_bertha
             }
 
             // Anger cannot be below 1. This fixes that.
-            UpdateAnger(0);
+            UpdateAnger(1);
 
             return status;
         }
@@ -229,7 +229,6 @@ namespace beg_aunt_bertha
 
             if (Boredom >= 10)
             {
-                Boredom = 10;
                 // Call GameOver function.
                 GameOver();
             }
@@ -248,7 +247,6 @@ namespace beg_aunt_bertha
 
             if (Anger >= 10)
             {
-                Anger = 10;
                 // Call GameOver function.
                 GameOver();
             }

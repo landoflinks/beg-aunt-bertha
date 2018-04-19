@@ -27,12 +27,12 @@ namespace beg_aunt_bertha
         #region Outside
         /* This method details what was done outside. 
         A number generator determines the outcome. */
-            public TimeSpan Outside(TimeSpan time)
+            public TimeSpan Outside(TimeSpan time, string forecast)
                 {
                 TimeSpan newTime = new TimeSpan();
                 newTime = time;
                 // If the weather is rainy, skip any outside activities.
-                if (Weather == "Thunderstorm" || Weather == "Light Rain")
+                if (forecast == "Thunderstorm" || forecast == "Light Rain")
                     {
                         Console.WriteLine("Aunt Bertha says: 'You can't go outside! It's raining!'");
                         UpdateBoredom(1);

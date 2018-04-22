@@ -314,13 +314,13 @@ namespace beg_aunt_bertha
             if (CurrentTime < two || (CurrentTime >= three && CurrentTime <= four)
                || (CurrentTime >= five && CurrentTime <= six))
             {
-                SetBerthaStatus();
+                BerthaStatus = SetBerthaStatus();
             }
 
             // Change the weather halfway through the afternoon (four).
             if (CurrentTime >= four && CurrentTime <= five)
             {
-                SetWeather();
+                Weather = SetWeather();
             }
 
             if (CurrentTime >= seven)

@@ -11,7 +11,6 @@ namespace beg_aunt_bertha
             string answer;
             TimeSpan newTime = new TimeSpan();
             GameData stats = new GameData();
-            Actions action = new Actions(stats);
             Pause pauseMenu = new Pause();
 
             Console.WriteLine("Welcome to Beg Aunt Bertha.");
@@ -21,6 +20,9 @@ namespace beg_aunt_bertha
             stats.BadSeed = stats.SetDifficulty();
             stats.Weather = stats.SetWeather();
             stats.BerthaStatus = stats.SetBerthaStatus();
+
+            Actions action = new Actions(stats); // Called later to grab stat values correctly.
+
             action.GameCommands();
             Console.WriteLine("Current Time: " + stats.CurrentTime);
             Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);

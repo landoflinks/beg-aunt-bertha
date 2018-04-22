@@ -13,6 +13,7 @@ namespace beg_aunt_bertha
         public int Anger { get; set; }
         public string BerthaStatus { get; set; }
         public string Weather { get; set; }
+        public bool Exit { get; set; }
 
         public GameData() // Sets defaults when game starts.
         {
@@ -22,6 +23,7 @@ namespace beg_aunt_bertha
             Anger = 1;
             BerthaStatus = "Watching TV";
             Weather = "Sunny";
+            Exit = false;
         }
 
         //////// Class methods ////////
@@ -230,7 +232,7 @@ namespace beg_aunt_bertha
             if (Boredom >= 10)
             {
                 // Call GameOver function.
-                GameOver();
+                Exit = GameOver();
             }
         }
         #endregion
@@ -248,15 +250,17 @@ namespace beg_aunt_bertha
             if (Anger >= 10)
             {
                 // Call GameOver function.
-                GameOver();
+                Exit = GameOver();
             }
         }
         #endregion
 
         #region GameOver
         // Handles a game over.
-        public void GameOver()
+        public bool GameOver()
         {
+            bool exit = false;
+
             // Check if Bertha is supremely ticked.
             if (Anger == 10)
             {
@@ -266,6 +270,7 @@ namespace beg_aunt_bertha
                 Console.WriteLine("Aunt Bertha doesn't take her eyes off of you for ONE SECOND.");
                 Console.WriteLine("Better luck next time!");
                 Console.WriteLine("Final Time: " + CurrentTime.ToString());
+                exit = true;
             }
 
             // Are you bored to death?
@@ -276,14 +281,18 @@ namespace beg_aunt_bertha
                 Console.WriteLine("You retreat to your room for the rest of the day and lounge on your bed.");
                 Console.WriteLine("Bertha has won. No matter what you do, her dullness and keen eye have thwarted you.");
                 Console.WriteLine("Final Time: " + CurrentTime.ToString());
+                exit = true;
             }
+            return exit;
         }
         #endregion
 
         #region Winner
         // The game is won!
-        public void Winner()
+        public bool Winner()
         {
+            bool exit = false;
+
             Console.WriteLine("Congratulations! You've won!");
             Console.WriteLine("You survived six hours with your least favorite aunt!");
             
@@ -299,16 +308,18 @@ namespace beg_aunt_bertha
             {
                 Console.WriteLine("You nearly died of boredom, but you survived...somehow.");
             }
+            return exit;
         }
         #endregion
 
         #region CheckTime
         // Checks the time in the game and sets events in motion as needed.
-        public void CheckTime()
+        public int CheckTime()
         {
             TimeSpan two = new TimeSpan(2,0,0), three = new TimeSpan(3,0,0);
             TimeSpan four = new TimeSpan(4,0,0), five = new TimeSpan(5,0,0);
             TimeSpan six = new TimeSpan(6, 0, 0), seven = new TimeSpan(7,0,0);
+            int exit = 0;
 
             // Change Bertha's status during odd hours.
             if (CurrentTime < two || (CurrentTime >= three && CurrentTime <= four)
@@ -325,8 +336,10 @@ namespace beg_aunt_bertha
 
             if (CurrentTime >= seven)
             {
-                Winner();
+                Exit = Winner();
+                exit = 1;
             }
+            return exit;
         }
         #endregion
     }

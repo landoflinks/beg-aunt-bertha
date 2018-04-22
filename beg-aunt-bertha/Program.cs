@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace beg_aunt_bertha
 {
@@ -74,7 +75,8 @@ namespace beg_aunt_bertha
             }
 
             Console.WriteLine("Thanks for playing!");
-            Console.ReadKey();
+            Thread.Sleep(2000);
+            Environment.Exit(0);
         }
         #endregion
     }

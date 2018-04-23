@@ -314,12 +314,11 @@ namespace beg_aunt_bertha
 
         #region CheckTime
         // Checks the time in the game and sets events in motion as needed.
-        public int CheckTime()
+        public void CheckTime()
         {
             TimeSpan two = new TimeSpan(2,0,0), three = new TimeSpan(3,0,0);
             TimeSpan four = new TimeSpan(4,0,0), five = new TimeSpan(5,0,0);
             TimeSpan six = new TimeSpan(6, 0, 0), seven = new TimeSpan(7,0,0);
-            int exit = 0;
 
             // Change Bertha's status during odd hours.
             if (CurrentTime < two || (CurrentTime >= three && CurrentTime <= four)
@@ -337,9 +336,7 @@ namespace beg_aunt_bertha
             if (CurrentTime >= seven)
             {
                 Exit = Winner();
-                exit = 1;
             }
-            return exit;
         }
         #endregion
     }

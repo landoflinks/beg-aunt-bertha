@@ -11,7 +11,7 @@ namespace beg_aunt_bertha
         {
             string answer, play;
             TimeSpan newTime = new TimeSpan();
-            GameData stats = new GameData();
+            Actions action = new Actions();
             Pause pauseMenu = new Pause();
 
             Console.Write("Play Beg Aunt Bertha? (Y/N): ");
@@ -22,16 +22,14 @@ namespace beg_aunt_bertha
                 Console.WriteLine("Welcome to Beg Aunt Bertha.");
                 // Create main game loop command list
 
-                // Setting pre-game stats
-                stats.BadSeed = stats.SetDifficulty();
-                stats.Weather = stats.SetWeather();
-                stats.BerthaStatus = stats.SetBerthaStatus();
-
-                Actions action = new Actions(stats); // Called later to grab stat values correctly.
+                // Setting pre-game action
+                action.BadSeed = action.SetDifficulty();
+                action.Weather = action.SetWeather();
+                action.BerthaStatus = action.SetBerthaStatus();
 
                 action.GameCommands();
-                Console.WriteLine("Current Time: " + stats.CurrentTime);
-                Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
+                Console.WriteLine("Current Time: " + action.CurrentTime);
+                Console.WriteLine("Bertha's Status: " + action.BerthaStatus);
 
                 // Main game loop
                 Console.Write("Enter in a value: ");
@@ -47,41 +45,41 @@ namespace beg_aunt_bertha
                             break;
                         case "O":
                             // Calls the Outside() method.
-                            newTime = action.Outside(stats.CurrentTime, stats.Weather);
+                            newTime = action.Outside(action.CurrentTime, action.Weather);
                             break;
                         case "R":
                             // Calls the Read() method.
-                            newTime = action.Read(stats.CurrentTime);
+                            newTime = action.Read(action.CurrentTime);
                             break;
                         case "T":
-                            newTime = action.Television(stats.CurrentTime, stats.BerthaStatus);
+                            newTime = action.Television(action.CurrentTime, action.BerthaStatus);
                             break;
                         case "S":
-                            newTime = action.DieFromBoredom(stats.CurrentTime);
+                            newTime = action.DieFromBoredom(action.CurrentTime);
                             break;
                         case "V":
-                            newTime = action.VideoGames(stats.CurrentTime, stats.BerthaStatus);
+                            newTime = action.VideoGames(action.CurrentTime, action.BerthaStatus);
                             break;
                         case "P":
                             // Used to access the Pause Menu.
-                            pauseMenu.PauseMenu(stats);
+                            pauseMenu.PauseMenu(action);
                             break;
                     }
 
                     // Checks the current time and sets in-game events into motion accordingly.
-                    stats.CheckTime();
+                    action.CheckTime();
 
-                    if (stats.Exit == true)
+                    if (action.Exit == true)
                     {
                         break;
                     }
 
                     Console.WriteLine();
-                    Console.WriteLine("Current Time: " + newTime); //stats.CurrentTime
-                    Console.WriteLine("Bertha's Status: " + stats.BerthaStatus);
+                    Console.WriteLine("Current Time: " + newTime); //action.CurrentTime
+                    Console.WriteLine("Bertha's Status: " + action.BerthaStatus);
                     Console.Write("Enter in a command: ");
                     answer = Convert.ToString(Console.ReadLine()).ToUpper();
-                    stats.CurrentTime = newTime;
+                    action.CurrentTime = newTime;
                 }
                 Console.Write("Play again? (Y/N): ");
                 play = Convert.ToString(Console.ReadLine()).ToUpper();

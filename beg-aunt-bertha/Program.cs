@@ -62,6 +62,7 @@ namespace beg_aunt_bertha
                             break;
                         case "P":
                             // Used to access the Pause Menu.
+                            newTime = action.CurrentTime; // Called to preserve the TimeSpan value.
                             pauseMenu.PauseMenu(action);
                             break;
                     }

@@ -10,8 +10,6 @@ namespace beg_aunt_bertha
         static void Main(string[] args)
         {
             string answer, play;
-            TimeSpan newTime = new TimeSpan();
-            Actions action = new Actions();
             Pause pauseMenu = new Pause();
 
             Console.Write("Play Beg Aunt Bertha? (Y/N): ");
@@ -19,6 +17,10 @@ namespace beg_aunt_bertha
 
             while (play != "N")
             {
+                // Set new instances of these two classes on each game reset.
+                TimeSpan newTime = new TimeSpan();
+                Actions action = new Actions();
+
                 Console.WriteLine("Welcome to Beg Aunt Bertha.");
                 // Create main game loop command list
 

@@ -333,7 +333,7 @@ namespace beg_aunt_bertha
                 Weather = SetWeather();
             }
 
-            if (CurrentTime >= seven)
+            if (CurrentTime == seven || CurrentTime >= seven)
             {
                 Exit = Winner();
             }

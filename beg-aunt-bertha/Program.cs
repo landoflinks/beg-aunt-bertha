@@ -22,7 +22,6 @@ namespace beg_aunt_bertha
                 Actions action = new Actions();
 
                 Console.WriteLine("Welcome to Beg Aunt Bertha.");
-                // Create main game loop command list
 
                 // Setting pre-game action
                 action.BadSeed = action.SetDifficulty();

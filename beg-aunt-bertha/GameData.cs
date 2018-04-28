@@ -291,7 +291,7 @@ namespace beg_aunt_bertha
         // The game is won!
         public bool Winner()
         {
-            bool exit = false;
+            bool exit = true;
 
             Console.WriteLine("Congratulations! You've won!");
             Console.WriteLine("You survived six hours with your least favorite aunt!");
